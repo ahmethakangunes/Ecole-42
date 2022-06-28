@@ -59,11 +59,8 @@ int	main(int argc, char **argv)
 
 	i = 1;
 	while (argv[i])
-	{
-		if (!control(argv[i]))
+		if (!control(argv[i++]))
 			return (0);
-		i++;
-	}
 	if (!setup(argc, argv))
 		return (0);
 }
