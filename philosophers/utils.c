@@ -36,3 +36,18 @@ void	think(t_list *philo)
 	get_time(philo);
 	printf("%lu %d thinking.\n", philo->time_to_start, philo->id);
 }
+
+void	takefork(t_list *philo)
+{
+	pthread_mutex_lock(philo->rmutex);
+	pthread_mutex_lock(philo->lmutex);
+	get_time(philo);
+	printf("%lu %d take a fork\n", philo->time_to_start, philo->id);
+	printf("%lu %d take a fork\n", philo->time_to_start, philo->id);
+}
+
+void	leavefork(t_list *philo)
+{
+	pthread_mutex_unlock(philo->rmutex);
+	pthread_mutex_unlock(philo->lmutex);
+}

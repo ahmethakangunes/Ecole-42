@@ -38,3 +38,17 @@ void	mealcheck(t_list *philo)
 		exit (1);
 	pthread_mutex_unlock(philo->lock);
 }
+
+void	get_time(t_list *philo)
+{
+	static int				ms;
+	static int				start;
+
+	pthread_mutex_lock(philo->lock);
+	gettimeofday(&philo->tv, NULL);
+	ms = (philo->tv.tv_sec * 1000) + (philo->tv.tv_usec / 1000);
+	if (start == 0)
+		start = ms;
+	philo->time_to_start = ms - start;
+	pthread_mutex_unlock(philo->lock);
+}
