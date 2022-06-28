@@ -19,7 +19,6 @@ void	*worker(void *arg)
 	philo = (t_list *)arg;
 	while (1)
 	{
-		die(philo);
 		if (philo->eatarray[philo->id - 1] != 1)
 			eat(philo);
 		if (philo->eatarray[philo->id - 1] != 1)
@@ -35,8 +34,8 @@ int	start(t_list *philo)
 	int				i;
 
 	i = 0;
-	if (!openmutex(philo) || !openfork(philo) || !samemutex(philo) || \
-	!eatarray(philo) || !diearray(philo))
+	if (!openmutex(philo) || !samemutex(philo) || !eatarray(philo) || \
+	!diearray(philo))
 		return (0);
 	while (i < philo->phi)
 	{
@@ -44,7 +43,6 @@ int	start(t_list *philo)
 		i += 2;
 	}
 	i = 1;
-	usleep(300);
 	while (i < philo->phi)
 	{
 		pthread_create(&philo[i].thread, NULL, worker, &philo[i]);

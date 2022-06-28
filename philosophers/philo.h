@@ -29,8 +29,6 @@ typedef struct s_list
 	pthread_mutex_t		*lock;
 	pthread_t			thread;
 	struct timeval		tv;
-	int					*rfork;
-	int					*lfork;
 	int					rhand;
 	int					lhand;
 	int					phi;
@@ -58,7 +56,6 @@ int		setup(int argc, char **argv);
 void	think(t_list *philo);
 int		start(t_list *philo);
 void	eat(t_list *philo);
-void	die(t_list *philo);
 void	meal(t_list *philo);
 void	mealcheck(t_list *philo);
 int		eatarray(t_list *philo);

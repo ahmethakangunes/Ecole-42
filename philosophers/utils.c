@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 16:06:07 by agunes            #+#    #+#             */
-/*   Updated: 2022/06/28 20:04:40 by agunes           ###   ########.fr       */
+/*   Created: 2022/06/28 15:46:15 by agunes            #+#    #+#             */
+/*   Updated: 2022/06/28 20:00:52 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	meal(t_list *philo)
+void	eat(t_list *philo)
 {
-	die(philo);
-	pthread_mutex_lock(philo->lock);
-	if (philo->ec == philo->meat)
-		philo->eatarray[philo->id - 1] = 1;
-	pthread_mutex_unlock(philo->lock);
+	takefork(philo);
+	get_time(philo);
+	printf("%lu %d eating.\n", philo->time_to_start, philo->id);
+	usleep(philo->eat * 1000);
+	philo->ec++;
+	leavefork(philo);
+	meal(philo);
+	mealcheck(philo);
 }
 
-void	mealcheck(t_list *philo)
+void	waitsleep(t_list *philo)
 {
-	int	i;
-	int	count;
-
-	pthread_mutex_lock(philo->lock);
-	die(philo);
-	i = 0;
-	count = 0;
-	while (i < philo->phi)
-	{
-		if (philo->eatarray[i] == 1)
-			count++;
-		i++;
-	}
-	if (count == philo->phi)
-		exit (1);
-	pthread_mutex_unlock(philo->lock);
+	get_time(philo);
+	printf("%lu %d sleeping.\n", philo->time_to_start, philo->id);
+	usleep(philo->sleep * 1000);
 }
 
-void	die(t_list *philo)
+void	think(t_list *philo)
 {
+	get_time(philo);
+	printf("%lu %d thinking.\n", philo->time_to_start, philo->id);
 }

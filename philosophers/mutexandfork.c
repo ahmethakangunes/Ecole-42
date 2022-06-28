@@ -35,32 +35,6 @@ int	openmutex(t_list *philo)
 	return (1);
 }
 
-int	openfork(t_list *philo)
-{
-	int				i;
-	int				*fork;
-
-	i = 0;
-	fork = malloc(sizeof(pthread_mutex_t) * philo->phi);
-	if (!fork)
-		return (0);
-	while (i < philo->phi)
-	{	
-		fork[i] = 1;
-		i++;
-	}
-	i = 1;
-	while (i < philo->phi)
-	{
-		philo[i].rfork = &fork[i];
-		philo[i].lfork = &fork[i - 1];
-		i++;
-	}
-	philo[0].rfork = &fork[0];
-	philo[0].lfork = &fork[philo->phi - 1];
-	return (1);
-}
-
 int	samemutex(t_list *philo)
 {
 	int				i;
