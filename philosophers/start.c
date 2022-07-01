@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:06:24 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 13:46:45 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 16:01:16 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@ void	*worker(void *arg)
 	t_list	*philo;
 
 	philo = (t_list *)arg;
+	philo->dtime = philo->time_to_start + philo->die;
 	while (1)
 	{
 		eat(philo);
 		if (philo->ec == philo->meat)
+			break ;
+		if (die(philo) == 1)
 			break ;
 		waitsleep(philo);
 		think(philo);

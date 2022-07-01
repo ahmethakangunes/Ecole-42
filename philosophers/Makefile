@@ -1,6 +1,8 @@
 NAME = philo
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=thread
+R = "\033[31m"
+G = "\033[32m"
 SRCS = fork.c \
 	ft_atoi.c \
 	main.c \
@@ -8,15 +10,6 @@ SRCS = fork.c \
 	setup.c		\
 	start.c	\
 	utils.c
-
-# colors for printing
-Y = "\033[33m"
-R = "\033[31m"
-G = "\033[32m"
-B = "\033[34m"
-X = "\033[0m"
-UP = "\033[A"
-CUT = "\033[K"
 
 OBJS= $(SRCS:.c=.o)
 all: ${NAME}
