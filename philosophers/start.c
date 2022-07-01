@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:06:24 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 17:10:53 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 17:19:12 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ void	*worker(void *arg)
 	t_list	*philo;
 
 	philo = (t_list *)arg;
-	if (philo->phi == 1)
-	{
-		printf("%d died.", philo->id);
-		exit (1);
-	}
 	philo->dtime = philo->time_to_start + philo->die;
 	while (1)
 	{
