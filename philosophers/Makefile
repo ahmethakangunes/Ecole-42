@@ -7,8 +7,7 @@ SRCS = fork.c \
 	mutexandfork.c \
 	setup.c		\
 	start.c	\
-	utils.c	\
-	utils2.c
+	utils.c
 
 # colors for printing
 Y = "\033[33m"

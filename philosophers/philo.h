@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:54:29 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 13:39:03 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 13:48:41 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ int		setup(int argc, char **argv);
 void	think(t_list *philo);
 int		start(t_list *philo);
 void	eat(t_list *philo);
-void	meal(t_list *philo);
-void	mealcheck(t_list *philo);
 int		eatarray(t_list *philo);
 int		diearray(t_list *philo);
 void	ft_usleep(t_list *philo, unsigned long ms);

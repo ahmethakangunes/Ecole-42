@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:06:24 by agunes            #+#    #+#             */
-/*   Updated: 2022/06/30 14:36:13 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 13:46:45 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ void	*worker(void *arg)
 	philo = (t_list *)arg;
 	while (1)
 	{
-		if (philo->eatarray[philo->id - 1] != 1)
-			eat(philo);
-		if (philo->eatarray[philo->id - 1] != 1)
-			waitsleep(philo);
-		if (philo->eatarray[philo->id - 1] != 1)
-			think(philo);
+		eat(philo);
+		if (philo->ec == philo->meat)
+			break ;
+		waitsleep(philo);
+		think(philo);
 	}
 	return (NULL);
 }
