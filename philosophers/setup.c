@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:55:47 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 20:59:45 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 21:02:36 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,22 @@ int	setup(int argc, char **argv)
 	if (argc == 5 || argc == 6)
 	{
 		philo = malloc(sizeof(t_list) * ft_atoi(argv[1]));
+		if (!philo)
+			return (0);
 		while (i < ft_atoi(argv[1]))
 		{
+			if (argc == 6)
+				philo[i].meat = ft_atoi(argv[5]);
 			philo[i].phi = ft_atoi(argv[1]);
 			philo[i].id = i + 1;
 			philo[i].die = ft_atoi(argv[2]);
 			philo[i].eat = ft_atoi(argv[3]);
 			philo[i].sleep = ft_atoi(argv[4]);
-			philo[i].argcount = argc;
-			if (argc == 6)
-				philo[i].meat = ft_atoi(argv[5]);
-			i++;
+			philo[i++].argcount = argc;
 		}
 		if (!start(philo))
 			return (0);
+		ft_exit(philo);
 	}
 	return (1);
 }
