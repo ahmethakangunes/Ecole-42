@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 15:44:56 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 14:57:55 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 20:23:54 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 void	takefork(t_list *philo)
 {
 	while (1)
-	{
+	{	
+		check_die(philo);
+		if (!is_finished(philo))
+			break ;
 		pthread_mutex_lock(philo->rmutex);
 		if (*philo->rfork == 1)
 		{
@@ -36,6 +39,7 @@ void	takefork(t_list *philo)
 		pthread_mutex_unlock(philo->lmutex);
 		if (philo->rhand == 1 && philo->lhand == 1)
 			break ;
+		
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:23:15 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 16:01:35 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 20:08:25 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,16 +90,3 @@ int	eatarray(t_list *philo)
 	return (1);
 }
 
-int	diearray(t_list *philo)
-{
-	int				i;
-	int				*diearray;
-
-	i = 0;
-	diearray = malloc(sizeof(int) * philo->phi);
-	if (!diearray)
-		return (0);
-	while (i < philo->phi)
-		philo[i++].diearray = diearray;
-	return (1);
-}
