@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:54:29 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 16:15:44 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 17:23:15 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,23 @@ typedef struct s_list
 	unsigned long int	dtime;
 	unsigned long int	die;
 	unsigned long int	eat;
+	unsigned long int	ec;
+	unsigned long int	meat;
+	unsigned long int	sleep;
+	struct timeval		tv;
 	pthread_mutex_t		*rmutex;
 	pthread_mutex_t		*lmutex;
 	pthread_mutex_t		*lock;
 	pthread_t			thread;
-	struct timeval		tv;
 	int					*rfork;
 	int					*lfork;
 	int					rhand;
 	int					lhand;
 	int					phi;
 	int					id;
-	int					ec;
-	int					meat;
 	int					*eatarray;
 	int					*diearray;
 	int					argcount;
-	int					sleep;
 }		t_list;
 
 int		openmutex(t_list *philo);

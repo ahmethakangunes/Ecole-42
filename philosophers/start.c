@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:06:24 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 17:19:12 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 17:22:04 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*worker(void *arg)
 	t_list	*philo;
 
 	philo = (t_list *)arg;
-	philo->dtime = philo->time_to_start + philo->die;
+	philo->ec = 0;
 	while (1)
 	{
 		eat(philo);
@@ -43,7 +43,6 @@ int	start(t_list *philo)
 		i += 2;
 	}
 	i = 1;
-	usleep(400);
 	while (i < philo->phi)
 	{
 		pthread_create(&philo[i].thread, NULL, worker, &philo[i]);
