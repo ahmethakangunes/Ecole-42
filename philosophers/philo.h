@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:54:29 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 16:01:22 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 16:23:16 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,4 @@ void	eat(t_list *philo);
 int		eatarray(t_list *philo);
 int		diearray(t_list *philo);
 void	ft_usleep(t_list *philo, unsigned long ms);
-int		die(t_list *philo);
 #endif
