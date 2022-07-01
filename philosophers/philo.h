@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:54:29 by agunes            #+#    #+#             */
-/*   Updated: 2022/06/28 19:38:46 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 13:39:03 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,15 @@
 typedef struct s_list
 {
 	unsigned long int	time_to_start;
+	int					die;
+	int					eat;
 	pthread_mutex_t		*rmutex;
 	pthread_mutex_t		*lmutex;
 	pthread_mutex_t		*lock;
 	pthread_t			thread;
 	struct timeval		tv;
+	int					*rfork;
+	int					*lfork;
 	int					rhand;
 	int					lhand;
 	int					phi;
@@ -37,8 +41,6 @@ typedef struct s_list
 	int					meat;
 	int					*eatarray;
 	int					*diearray;
-	int					die;
-	int					eat;
 	int					argcount;
 	int					sleep;
 }		t_list;
@@ -60,5 +62,5 @@ void	meal(t_list *philo);
 void	mealcheck(t_list *philo);
 int		eatarray(t_list *philo);
 int		diearray(t_list *philo);
-
+void	ft_usleep(t_list *philo, unsigned long ms);
 #endif

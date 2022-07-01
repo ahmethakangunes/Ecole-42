@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:06:24 by agunes            #+#    #+#             */
-/*   Updated: 2022/06/29 11:41:23 by agunes           ###   ########.fr       */
+/*   Updated: 2022/06/30 14:36:13 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	start(t_list *philo)
 	int				i;
 
 	i = 0;
-	if (!openmutex(philo) || !samemutex(philo) || !eatarray(philo) || \
-	!diearray(philo))
+	if (!openmutex(philo) || !openfork(philo) || !samemutex(philo) || \
+	!eatarray(philo) || !diearray(philo))
 		return (0);
 	while (i < philo->phi)
 	{
@@ -43,7 +43,7 @@ int	start(t_list *philo)
 		i += 2;
 	}
 	i = 1;
-	usleep(600);
+	usleep(300);
 	while (i < philo->phi)
 	{
 		pthread_create(&philo[i].thread, NULL, worker, &philo[i]);

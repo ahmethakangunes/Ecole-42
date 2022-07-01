@@ -1,10 +1,12 @@
 NAME = philo
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = ft_atoi.c \
+SRCS = fork.c \
+	ft_atoi.c \
 	main.c \
-	mutex.c \
-	start.c		\
+	mutexandfork.c \
+	setup.c		\
+	start.c	\
 	utils.c	\
 	utils2.c
 
