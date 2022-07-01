@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:55:47 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 16:24:48 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 14:51:05 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	setup(int argc, char **argv)
 		philo->phi = ft_atoi(argv[1]);
 		while (i < philo->phi)
 		{
-			philo[i].id = i + 1;
 			philo[i].time_to_start = 0;
 			philo[i].phi = ft_atoi(argv[1]);
+			philo[i].id = i + 1;
 			philo[i].die = ft_atoi(argv[2]);
 			philo[i].eat = ft_atoi(argv[3]);
 			philo[i].sleep = ft_atoi(argv[4]);
