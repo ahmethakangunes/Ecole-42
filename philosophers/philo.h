@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:54:29 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 20:24:54 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/01 20:57:19 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ void	ft_usleep(t_list *philo, unsigned long ms);
 void	check_die(t_list *philo);
 void	go_and_kill(t_list *philo);
 int		is_finished(t_list *philo);
+int		finito(t_list *philo);
 #endif
