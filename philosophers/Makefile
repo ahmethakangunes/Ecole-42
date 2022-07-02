@@ -9,6 +9,7 @@ SRCS = fork.c \
 	mutexandfork.c \
 	setup.c		\
 	start.c	\
+	ft_exit.c	\
 	utils.c
 
 OBJS= $(SRCS:.c=.o)

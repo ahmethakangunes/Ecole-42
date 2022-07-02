@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:23:15 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 20:56:56 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/02 13:23:22 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,17 +90,17 @@ int	eatarray(t_list *philo)
 	return (1);
 }
 
-int	finito(t_list *philo)
+int	diecount(t_list *philo)
 {
-	int	*fi;
+	int	*diecount;
 	int	i;
 
-	fi = malloc(sizeof(int));
+	diecount = malloc(sizeof(int));
 	i = 0;
-	if (!fi)
+	if (!diecount)
 		return (0);
-	*fi = 1;
+	*diecount = 1;
 	while (i < philo->phi)
-		philo[i++].finish = fi;
+		philo[i++].finish = diecount;
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:06:24 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 20:57:11 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/02 13:24:01 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	start(t_list *philo)
 
 	i = 0;
 	if (!openmutex(philo) || !openfork(philo) || !samemutex(philo) || \
-	!eatarray(philo) || !finito(philo))
+	!eatarray(philo) || !diecount(philo))
 		return (0);
 	while (i < philo->phi)
 	{
