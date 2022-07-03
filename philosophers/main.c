@@ -39,4 +39,5 @@ int	main(int argc, char **argv)
 	}
 	if (!setup(argc, argv))
 		return (0);
+	getchar();
 }
