@@ -1,6 +1,6 @@
 NAME = philo
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=thread
 R = "\033[31m"
 G = "\033[32m"
 SRCS = fork.c \
@@ -8,8 +8,8 @@ SRCS = fork.c \
 	main.c \
 	mutexandfork.c \
 	setup.c		\
-	start.c	\
-	ft_exit.c	\
+	start.c		\
+	die.c		\
 	utils.c
 
 OBJS= $(SRCS:.c=.o)

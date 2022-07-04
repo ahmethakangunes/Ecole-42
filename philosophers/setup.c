@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:55:47 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 21:02:36 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/04 13:37:50 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ int	setup(int argc, char **argv)
 			philo[i].die = ft_atoi(argv[2]);
 			philo[i].eat = ft_atoi(argv[3]);
 			philo[i].sleep = ft_atoi(argv[4]);
-			philo[i++].argcount = argc;
+			philo[i].argcount = argc;
+			i++;
 		}
 		if (!start(philo))
 			return (0);
-		ft_exit(philo);
 	}
 	return (1);
 }

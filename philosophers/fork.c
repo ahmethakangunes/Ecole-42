@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 15:44:56 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 20:54:25 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/04 13:37:28 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	takefork(t_list *philo)
 		pthread_mutex_lock(philo->rmutex);
 		if (*philo->rfork == 1)
 		{
-			get_time(philo);
 			printf("%lu %d has taken a fork\n", philo->time_to_start, philo->id);
 			*philo->rfork = 0;
 			philo->rhand = 1;
@@ -31,7 +30,6 @@ void	takefork(t_list *philo)
 		pthread_mutex_lock(philo->lmutex);
 		if (*philo->lfork == 1)
 		{
-			get_time(philo);
 			printf("%lu %d has taken a fork\n", philo->time_to_start, philo->id);
 			*philo->lfork = 0;
 			philo->lhand = 1;
@@ -39,7 +37,6 @@ void	takefork(t_list *philo)
 		pthread_mutex_unlock(philo->lmutex);
 		if (philo->rhand == 1 && philo->lhand == 1)
 			break ;
-		
 	}
 }
 
@@ -59,35 +56,4 @@ void	leavefork(t_list *philo)
 		philo->lhand = 0;
 	}
 	pthread_mutex_unlock(philo->lmutex);
-}
-
-void	check_die(t_list *philo)
-{
-	get_time(philo);
-	if (*philo->finish == 1)
-	{
-		if (philo->time_to_start >= philo->dtime)
-			go_and_kill(philo);
-	}
-}
-
-void go_and_kill(t_list *philo)
-{
-	get_time(philo);
-	pthread_mutex_lock(philo->lock);
-	if (*philo->finish == 1)
-	{
-		*philo->finish = 0;
-		printf("%lu %d has died\n", philo->time_to_start, philo->id);
-	}
-	pthread_mutex_unlock(philo->lock);
-}
-
-int is_finished(t_list *philo)
-{
-	int result;
-	pthread_mutex_lock(philo->lock);
-	result = *philo->finish;
-	pthread_mutex_unlock(philo->lock);
-	return (result);
 }

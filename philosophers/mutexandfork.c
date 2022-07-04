@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:23:15 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/02 13:23:22 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/02 14:25:24 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	openfork(t_list *philo)
 	int				*fork;
 
 	i = 0;
-	fork = malloc(sizeof(pthread_mutex_t) * philo->phi);
+	fork = malloc(sizeof(int) * philo->phi);
 	if (!fork)
 		return (0);
 	while (i < philo->phi)
@@ -73,20 +73,6 @@ int	samemutex(t_list *philo)
 	pthread_mutex_init(lock, NULL);
 	while (i < philo->phi)
 		philo[i++].lock = lock;
-	return (1);
-}
-
-int	eatarray(t_list *philo)
-{
-	int				i;
-	int				*eatarray;
-
-	i = 0;
-	eatarray = malloc(sizeof(int) * philo->phi);
-	if (!eatarray)
-		return (0);
-	while (i < philo->phi)
-		philo[i++].eatarray = eatarray;
 	return (1);
 }
 

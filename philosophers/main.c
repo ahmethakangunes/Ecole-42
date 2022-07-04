@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:24:49 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/01 21:02:27 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/02 14:41:45 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,4 @@ int	main(int argc, char **argv)
 	}
 	if (!setup(argc, argv))
 		return (0);
-	getchar();
 }

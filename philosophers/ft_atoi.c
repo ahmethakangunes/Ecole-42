@@ -6,32 +6,26 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:54:09 by agunes            #+#    #+#             */
-/*   Updated: 2022/06/20 13:04:01 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/02 14:34:46 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	ft_atoi(char *s1)
+int	ft_atoi(char *str)
 {
-	int	i;
-	int	sayi;
-	int	isaret;
+	int			i;
+	long int	sayi;
+	int			isaret;
 
 	i = 0;
 	sayi = 0;
 	isaret = 1;
-	while (s1[i] <= 32)
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
 		i++;
-	if (s1[i] == '-' && s1[i] == '+')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (s1[i] == '-')
-			isaret *= -1;
-		i++;
-	}
-	while (s1[i] >= '0' && s1[i] <= '9')
-	{
-		sayi = (sayi * 10) + (s1[i] - 48);
+		sayi = (sayi * 10) + str[i] - '0';
 		i++;
 	}
 	return (sayi * isaret);
