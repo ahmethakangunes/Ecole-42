@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 16:23:40 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/05 16:28:40 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/05 16:31:30 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_exit(t_list *philo)
 	free(philo->freemutex);
 	free(philo->freefork);
 	pthread_mutex_destroy(philo->freesamemutex);
-	free(philo->freediecount);
 	free(philo->freediecount);
 	free(philo);
 }

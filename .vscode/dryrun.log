@@ -1,0 +1,7 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/agunes/Desktop/Ecole-42'
+ 
+make: Leaving directory `/Users/agunes/Desktop/Ecole-42'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
