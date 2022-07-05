@@ -6,13 +6,13 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:23:15 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/02 14:25:24 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/05 16:20:43 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	openmutex(t_list *philo)
+pthread_mutex_t	*openmutex(t_list *philo)
 {
 	int				i;
 	pthread_mutex_t	*mutex;
@@ -32,10 +32,10 @@ int	openmutex(t_list *philo)
 	}
 	philo[0].rmutex = &mutex[0];
 	philo[0].lmutex = &mutex[philo->phi - 1];
-	return (1);
+	return (mutex);
 }
 
-int	openfork(t_list *philo)
+int	*openfork(t_list *philo)
 {
 	int				i;
 	int				*fork;
@@ -58,10 +58,10 @@ int	openfork(t_list *philo)
 	}
 	philo[0].rfork = &fork[0];
 	philo[0].lfork = &fork[philo->phi - 1];
-	return (1);
+	return (fork);
 }
 
-int	samemutex(t_list *philo)
+pthread_mutex_t	*samemutex(t_list *philo)
 {
 	int				i;
 	pthread_mutex_t	*lock;
@@ -73,10 +73,10 @@ int	samemutex(t_list *philo)
 	pthread_mutex_init(lock, NULL);
 	while (i < philo->phi)
 		philo[i++].lock = lock;
-	return (1);
+	return (lock);
 }
 
-int	diecount(t_list *philo)
+int	*diecount(t_list *philo)
 {
 	int	*diecount;
 	int	i;
@@ -88,5 +88,5 @@ int	diecount(t_list *philo)
 	*diecount = 1;
 	while (i < philo->phi)
 		philo[i++].finish = diecount;
-	return (1);
+	return (diecount);
 }

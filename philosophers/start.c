@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:06:24 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/04 13:38:15 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/05 16:22:42 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ int	start(t_list *philo)
 	int				i;
 
 	i = 0;
+	philo->freemutex = openmutex(philo);
+	philo->freefork = openfork(philo);
+	philo->freesamemutex = samemutex(philo);
+	philo->freediecount = diecount(philo);
 	if (!openmutex(philo) || !openfork(philo) || !samemutex(philo) || \
 	!diecount(philo))
 		return (0);

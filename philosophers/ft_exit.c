@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 12:24:49 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/05 16:27:58 by agunes           ###   ########.fr       */
+/*   Created: 2022/07/05 16:23:40 by agunes            #+#    #+#             */
+/*   Updated: 2022/07/05 16:28:40 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	control(char *s1)
+void	ft_exit(t_list *philo)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i])
-	{
-		if (!(s1[i] >= '0' && s1[i] <= '9'))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	main(int argc, char **argv)
-{
-	int	i;
-
-	i = 1;
-	while (argv[i])
-	{
-		if (!control(argv[i]))
-			return (0);
-		i++;
-	}
-	if (!setup(argc, argv))
-		return (0);
+	while (i < philo->phi)
+		pthread_mutex_destroy(&philo->freemutex[i++]);
+	free(philo->freemutex);
+	free(philo->freefork);
+	pthread_mutex_destroy(philo->freesamemutex);
+	free(philo->freediecount);
+	free(philo->freediecount);
+	free(philo);
 }

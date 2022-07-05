@@ -10,6 +10,7 @@ SRCS = fork.c \
 	setup.c		\
 	start.c		\
 	die.c		\
+	ft_exit.c   \
 	utils.c
 
 OBJS= $(SRCS:.c=.o)
