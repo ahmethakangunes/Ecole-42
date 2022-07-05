@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:06:24 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/05 16:22:42 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/05 16:35:18 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	start(t_list *philo)
 		i += 2;
 	}
 	i = 1;
+	usleep(600);
 	while (i < philo->phi)
 	{
 		pthread_create(&philo[i].thread, NULL, worker, &philo[i]);
