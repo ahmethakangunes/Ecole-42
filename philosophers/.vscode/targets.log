@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Tue Jul 19 18:55:09 2022
+# Make data base, printed on Tue Jul 19 20:02:53 2022
 
 # Variables
 
@@ -138,7 +139,7 @@ LANG = C
 # environment
 VSCODE_PID = 42529
 # variable set hash-table stats:
-# Load=63/1024=6%, Rehash=0, Collisions=3/91=3%
+# Load=63/1024=6%, Rehash=0, Collisions=3/95=3%
 
 # Pattern-specific Variable Values
 
@@ -146,9 +147,9 @@ VSCODE_PID = 42529
 
 # Directories
 
-# . (device 16777225, inode 2637182): 26 files, no impossibilities.
+# . (device 16777225, inode 2637182): 16 files, no impossibilities.
 
-# 26 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -162,18 +163,11 @@ VSCODE_PID = 42529
 
 # Files
 
-setup.o: setup.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `setup'
-#  Last modified 2022-07-19 18:49:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 26):
-	@echo $(G)Compiling: [$<]
-	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
-	
+# Not a target:
+setup.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 all: philo
 #  Phony target (prerequisite of .PHONY).
@@ -181,62 +175,26 @@ all: philo
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
 philo: fork.o ft_atoi.o main.o mutexandfork.o setup.o start.o die.o ft_exit.o utils.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-19 18:49:28
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 #  commands to execute (from `Makefile', line 21):
 	@$(CC) ${CFLAGS} $(OBJS) -o $(NAME)
 	@echo $(R)[COMPILING DONE]
 	
 
-# Not a target:
-utils.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-19 17:45:19
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
 .PHONY: fclean re all clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-main.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-19 18:20:03
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-mutexandfork.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-19 17:45:19
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-ft_atoi.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-19 17:45:19
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .SUFFIXES:
@@ -253,41 +211,17 @@ Makefile:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-start.o: start.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `start'
-#  Last modified 2022-07-19 18:49:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 26):
-	@echo $(G)Compiling: [$<]
-	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
-	
+# Not a target:
+start.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-setup.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-19 17:45:19
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-die.o: die.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `die'
-#  Last modified 2022-07-19 18:49:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 26):
-	@echo $(G)Compiling: [$<]
- 
-	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
-	
+die.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -309,43 +243,43 @@ norm:
 fork.o: fork.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `fork'
-#  Last modified 2022-07-19 18:49:28
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := fork.o
+# automatic
+# % := 
+# automatic
+# * := fork
+# automatic
+# + := fork.c
+# automatic
+# | := 
+# automatic
+# < := fork.c
+# automatic
+# ^ := fork.c
+# automatic
+# ? := fork.c
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
 #  commands to execute (from `Makefile', line 26):
 	@echo $(G)Compiling: [$<]
 	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
 	
 
-ft_exit.o: ft_exit.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_exit'
-#  Last modified 2022-07-19 18:49:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 26):
-	@echo $(G)Compiling: [$<]
-	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
-	
+# Not a target:
+ft_exit.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-start.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-19 17:45:19
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -363,86 +297,41 @@ clean:
 	
 
 # Not a target:
-die.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-19 17:45:19
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-utils.o: utils.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `utils'
-#  Last modified 2022-07-19 18:49:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 26):
-	@echo $(G)Compiling: [$<]
-	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
-	
+# Not a target:
+main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-main.o: main.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `main'
-#  Last modified 2022-07-19 18:49:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 26):
-	@echo $(G)Compiling: [$<]
-	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
-	
-
-mutexandfork.o: mutexandfork.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `mutexandfork'
-#  Last modified 2022-07-19 18:49:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 26):
-	@echo $(G)Compiling: [$<]
-	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
-	
+# Not a target:
+mutexandfork.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 fork.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-19 17:45:19
+ 
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-ft_atoi.o: ft_atoi.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_atoi'
-#  Last modified 2022-07-19 18:49:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 26):
-	@echo $(G)Compiling: [$<]
-	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
-	
 
 # Not a target:
-ft_exit.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-19 18:49:25
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+ft_atoi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=28/1024=3%, Rehash=0, Collisions=9/85=11%
+# Load=20/1024=2%, Rehash=0, Collisions=1/53=2%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -454,6 +343,6 @@ ft_exit.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jul 19 18:55:09 2022
+# Finished Make data base on Tue Jul 19 20:02:53 2022
 
  
