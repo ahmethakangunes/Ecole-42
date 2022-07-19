@@ -17,11 +17,15 @@ void	ft_exit(t_list *philo)
 	int	i;
 
 	i = 0;
+	printf("sizeof = %lu\n", sizeof(philo));
 	while (i < philo->phi)
 		pthread_mutex_destroy(&philo->freemutex[i++]);
-	free(philo->freemutex);
-	free(philo->freefork);
+	i = 0;
+	while (i < philo->phi)
+		free(&philo->freemutex[i++]);
 	pthread_mutex_destroy(philo->freesamemutex);
+	free(philo->freesamemutex);
+	free(philo->freefork);
 	free(philo->freediecount);
 	free(philo);
 }
