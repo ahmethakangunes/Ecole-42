@@ -1,0 +1,24 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/agunes/Desktop/Ecole-42/philosophers'
+echo "\033[32m"Compiling: [fork.c]
+gcc -c fork.c -o fork.o -Wall -Werror -Wextra
+echo "\033[32m"Compiling: [ft_atoi.c]
+gcc -c ft_atoi.c -o ft_atoi.o -Wall -Werror -Wextra
+echo "\033[32m"Compiling: [main.c]
+gcc -c main.c -o main.o -Wall -Werror -Wextra
+echo "\033[32m"Compiling: [mutexandfork.c]
+gcc -c mutexandfork.c -o mutexandfork.o -Wall -Werror -Wextra
+echo "\033[32m"Compiling: [setup.c]
+gcc -c setup.c -o setup.o -Wall -Werror -Wextra
+echo "\033[32m"Compiling: [start.c]
+gcc -c start.c -o start.o -Wall -Werror -Wextra
+echo "\033[32m"Compiling: [die.c]
+gcc -c die.c -o die.o -Wall -Werror -Wextra
+echo "\033[32m"Compiling: [ft_exit.c]
+gcc -c ft_exit.c -o ft_exit.o -Wall -Werror -Wextra
+echo "\033[32m"Compiling: [utils.c]
+gcc -c utils.c -o utils.o -Wall -Werror -Wextra
+gcc -Wall -Wextra -Werror fork.o ft_atoi.o main.o mutexandfork.o setup.o start.o die.o ft_exit.o utils.o -o philo
+echo "\033[31m"[COMPILING DONE]
+make: Leaving directory `/Users/agunes/Desktop/Ecole-42/philosophers'
+ 
