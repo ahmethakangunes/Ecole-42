@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:24:49 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/19 19:33:50 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/25 14:22:29 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	control(char *s1)
 	}
 	return (1);
 }
-
 
 int	main(int argc, char **argv)
 {

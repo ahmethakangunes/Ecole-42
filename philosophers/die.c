@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:32:12 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/04 13:33:05 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/25 14:13:10 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	check_die(t_list *philo)
 {
 	get_time(philo);
+	usleep(200);
 	if (*philo->finish == 1)
 	{
 		if (philo->time_to_start >= philo->dtime)

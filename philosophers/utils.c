@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 15:46:15 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/04 13:36:22 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/25 14:23:15 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	waitsleep(t_list *philo)
 void	think(t_list *philo)
 {
 	get_time(philo);
+	usleep(100);
 	if (is_finished(philo))
 		printf("%lu %d thinking.\n", philo->time_to_start, philo->id);
 }
@@ -51,5 +52,6 @@ void	ft_usleep(t_list *philo, unsigned long ms)
 	{
 		get_time(philo);
 		check_die(philo);
-	}		
+	}
+	usleep(ms);
 }
