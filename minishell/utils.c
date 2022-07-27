@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 10:55:41 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/27 16:04:22 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/27 16:31:32 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ char	*kms(void)
 
 	buff = malloc(1000);
 	pid = fork();
-	getchar();
 	if (pid == 0)
 	{
 		dup2(fd, 1);
@@ -60,14 +59,6 @@ char	*ft_prompt(char **envp)
 		pr = ft_strjoin(pr, kms());
 	return (pr);
 }
-
-char **ft_parse(char *command)
-{
-	command = 0;
-	return (0);
-}
-
-
 
 
 
