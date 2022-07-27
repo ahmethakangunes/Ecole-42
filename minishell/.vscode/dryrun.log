@@ -1,0 +1,13 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/agunes/Desktop/Ecole-42/minishell'
+make -C ./libft
+echo "\033[31m"Complining: [main.c]
+gcc -c main.c -o main.o -Wall -Werror -Wextra
+echo "\033[31m"Complining: [utils.c]
+gcc -c utils.c -o utils.o -Wall -Werror -Wextra
+echo "\033[31m"Complining: [ft_minishell.c]
+gcc -c ft_minishell.c -o ft_minishell.o -Wall -Werror -Wextra
+gcc -Wall -Wextra -Werror -lreadline main.o utils.o ft_minishell.o -o minishell ./libft/libft.a
+echo "\033[1;96mMinishell ready.\033[1;96m"
+make: Leaving directory `/Users/agunes/Desktop/Ecole-42/minishell'
+ 
