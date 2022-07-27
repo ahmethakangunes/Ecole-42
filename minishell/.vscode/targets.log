@@ -6,11 +6,13 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Wed Jul 27 16:47:22 2022
+# Make data base, printed on Wed Jul 27 17:00:27 2022
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -56,7 +58,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.XgODCwgsxa/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.1b7mrlB7lr/Listeners
 # automatic
 %F = $(notdir $%)
 # makefile (from `Makefile', line 18)
@@ -150,7 +152,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 33332
+VSCODE_PID = 1941
 # variable set hash-table stats:
 # Load=70/1024=7%, Rehash=0, Collisions=3/103=3%
 
@@ -305,7 +307,6 @@ main.o:
 
 # files hash-table stats:
 # Load=14/1024=1%, Rehash=0, Collisions=0/41=0%
- 
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -317,6 +318,6 @@ main.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jul 27 16:47:22 2022
+# Finished Make data base on Wed Jul 27 17:00:27 2022
 
  
