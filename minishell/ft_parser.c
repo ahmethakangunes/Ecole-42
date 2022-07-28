@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 11:39:05 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/28 14:13:35 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/28 16:13:17 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,20 @@ char **splt2(char *command)
     while (command[i])
     {
         j = 0;
-        if ((command[i] != '>' || command[i] != '<') && command[i] != ' ')
+        if ((command[i] != '>' && command[i] != '<') && command[i] != ' ')
         {
             cmd[k] = malloc(sizeof(char) * 1000);
-            while (command[i] && command[i] != ' ')
+            while (command[i] && command[i] != ' ' && (command[i] != '>' && command[i] != '<'))
                 cmd[k][j++] = command[i++];
             cmd[k++][j] = '\0'; 
         }
         if (command[i] == '>' || command[i] == '<')
         {
-			printf("test\n");
 			j = 0;
             cmd[k] = malloc(sizeof(char) * 100);
             cmd[k][j++] = command[i];
-			cmd[k++][j] = '\0';
+			cmd[k][j] = '\0';
+			k++;
         }
         i++;
     }
@@ -116,7 +116,8 @@ char *merge(char **command)
 		j = 0;
 		while(command[i][j])
 			arr[k++] = command[i][j++];
-		arr[k++] = ' ';
+		if (command[i + 1])
+			arr[k++] = ' ';
 		i++; 
 	}
 	return (arr);
@@ -133,7 +134,15 @@ char **ft_parse(char *command)
 	command = merge(cmd);
 	cmd = splt2(command);
 	int i = 0;
-	while(cmd[i])
-		printf("%s\n", cmd[i++]);
+	while (!(command = getenv(cmd[i] + 1)))
+		i++;
+	if (command)
+		printf("%s\n", command);
+	chdir("..");
+	i = 0;
+	while (!(command = getenv(cmd[i] + 1)))
+		i++;
+	if (command)
+		printf("%s\n", command);
 	return (cmd);
 }
