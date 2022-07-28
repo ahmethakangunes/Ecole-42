@@ -1,7 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/agunes/Desktop/Ecole-42/minishell'
 make -C ./libft
- 
 echo "\033[31m"Complining: [main.c]
 gcc -c main.c -o main.o -Wall -Werror -Wextra
 echo "\033[31m"Complining: [utils.c]

@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/27 15:41:17 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/28 10:53:37 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 # include <string.h>
 # include <fcntl.h>
 
-char	*ft_prompt(char **envp);
-int     ft_minishell(char **envp);
+char	*ft_prompt(void);
+int     ft_minishell(void);
 char	*kms(void);
 
 #endif

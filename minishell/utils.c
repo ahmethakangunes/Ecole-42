@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 10:55:41 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/27 16:31:32 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/28 10:57:29 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*kms(void)
 	return (buff);
 }
 
-char	*ft_prompt(char **envp)
+char	*ft_prompt(void)
 {
 	int		i;
 	int		flag;
@@ -48,15 +48,9 @@ char	*ft_prompt(char **envp)
 	pr = malloc(sizeof(char) * 20);
 	if (!pr)
 		return (0);	
-	while (envp[++i])
-	{
-		if (ft_strncmp(envp[i], "USER", 4) == 0)
-			break ;
-	}
-	pr = envp[i] + 5;
+	pr = getenv("USER");
 	pr = ft_strjoin(pr, "@");
-	if (flag++ == 0)
-		pr = ft_strjoin(pr, kms());
+	pr = ft_strjoin(pr, kms());
 	return (pr);
 }
 

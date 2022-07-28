@@ -6,16 +6,14 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:03 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/27 16:09:53 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/28 10:55:56 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int main(int argc, char **argv, char **envp)
+int main(void)
 {
-	argc = 0;
-	argv = 0;
-	if (!ft_minishell(envp))
+	if (!ft_minishell())
 		return (0);
 }
