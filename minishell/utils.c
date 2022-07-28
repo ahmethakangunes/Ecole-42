@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 10:55:41 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/28 10:57:29 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/28 11:37:59 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,25 @@ char	*kms(void)
 {
 	char	*hostname[] = {"hostname", NULL};
 	char	*buff;
-	int		fd = open("test", O_RDWR);
+	int		p[2];
 	int		rd_bytes;
 	int		pid;
 
 	buff = malloc(1000);
+	pipe(p);
 	pid = fork();
 	if (pid == 0)
 	{
-		dup2(fd, 1);
+		dup2(p[1], 1);
 		execve("/bin/hostname", hostname, NULL);
 	}
 	else
 	{
 		wait(NULL);
+		rd_bytes = read(p[0], buff, 8);
+		buff = ft_strjoin(buff, " % ");
 		dup(1);
 	}
-	rd_bytes = read(fd, buff, 8);
-	buff = ft_strjoin(buff, " % ");
 	return (buff);
 }
 

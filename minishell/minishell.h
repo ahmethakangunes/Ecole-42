@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/28 10:53:37 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/28 12:07:55 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@
 char	*ft_prompt(void);
 int     ft_minishell(void);
 char	*kms(void);
+char    **ft_parser(char *s1);
+char    **ft_parse(char *s1);
 
 #endif

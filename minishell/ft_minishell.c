@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 11:14:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/28 10:58:15 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/28 13:20:37 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int ft_minishell(void)
 	
 	command = malloc(sizeof(char) * 2048);
 	while (1)
+	{
 		command = readline(ft_prompt());
+		ft_parser(command);
+		add_history(command);
+	}
 	return (1);
 }

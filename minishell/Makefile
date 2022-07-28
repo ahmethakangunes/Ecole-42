@@ -1,9 +1,10 @@
 NAME = minishell
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -lreadline
+CFLAGS = -Wall -Wextra -Werror -lreadline -g
 SRCS = main.c \
 	utils.c \
 	ft_minishell.c \
+	ft_parser.c		\
 
 # colors for printing
 Y = "\033[33m"
@@ -32,12 +33,10 @@ $(NAME): $(OBJS) $(PRIN)
 clean:
 	@rm -rf ${OBJS}
 	@echo $(R)Removed [$(OBJS)]$(B)
-	@make clean -C libft/
 
 fclean: clean
 	@rm -rf ${NAME}
 	@echo $(R)Removed [$(NAME)]$(B)
-	@make fclean -C libft/
 
 re: fclean all
 

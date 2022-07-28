@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 14:24:02 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/26 14:24:18 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/28 12:33:37 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	*splitit(char **array, char const *s, char c, int mallocsayi)
 	while (j < mallocsayi)
 	{
 		while (s[i] != '\0' && s[i] == c)
-			i++;
+				i++;
 		while (s[i] != '\0' && s[i] != c)
 		{
 			i++;
