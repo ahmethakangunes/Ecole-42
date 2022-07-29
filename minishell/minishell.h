@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
+/*   By: scoskun <scoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/28 12:07:55 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/29 13:17:57 by scoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_prompt(void);
 int     ft_minishell(void);
 char	*kms(void);
 char    **ft_parser(char *s1);
-char    **ft_parse(char *s1);
+void    runcommand(char **command);
+void	ft_searchfor(char *arr, char **args, int	a, int last);
 
 #endif

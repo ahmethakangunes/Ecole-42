@@ -5,6 +5,7 @@ SRCS = main.c \
 	utils.c \
 	ft_minishell.c \
 	ft_parser.c		\
+	ft_execute.c	\
 
 # colors for printing
 Y = "\033[33m"

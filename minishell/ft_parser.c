@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
+/*   By: scoskun <scoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 11:39:05 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/28 16:13:17 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/29 12:35:56 by scoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,79 +26,72 @@ int	ft_check(char *arr)
 	return (1);
 }
 
-char **splt(char *command)
+char	**splt(char *command)
 {
-    int    i;
-    int    j;
-    int    k;
-    char    **cmd;
+	int		i;
+	int		j;
+	int		k;
+	char	**cmd;
 
-    i = 0;
-    k = 0;
-    cmd = malloc(sizeof(char *) * 10);
-    while (command[i])
-    {
-        j = 0;
-        if (command[i] != '"' && command[i] != ' ')
-        {
-            cmd[k] = malloc(sizeof(char) * 1000);
-            while (command[i] && command[i] != '"' && command[i] != ' ')
-                cmd[k][j++] = command[i++];
-            cmd[k++][j] = '\0'; 
-        }
-        if (command[i] == '"')
-        {
-          i++;
-            cmd[k] = malloc(sizeof(char) * 1000);
-            j = 0;
-            while (command[i] && command[i] != '"')
-                cmd[k][j++] = command[i++];
-            cmd[k++][j] = '\0'; 
-        }
-        i++;
-    }
-    cmd[k] = NULL;
-    return(cmd);
+	i = -1;
+	k = 0;
+	cmd = malloc(sizeof(char *) * 10);
+	while (command[++i])
+	{
+		j = 0;
+		if (command[i] != '"' && command[i] != ' ')
+		{
+			cmd[k] = malloc(sizeof(char) * 1000);
+			while (command[i] && command[i] != '"' && command[i] != ' ')
+				cmd[k][j++] = command[i++];
+			cmd[k++][j] = '\0';
+		}
+		if (command[i] == '"')
+		{
+			i++;
+			cmd[k] = malloc(sizeof(char) * 1000);
+			j = 0;
+			while (command[i] && command[i] != '"')
+				cmd[k][j++] = command[i++];
+			cmd[k++][j] = '\0';
+		}
+	}
+	cmd[k] = NULL;
+	return (cmd);
 }
 
 char **splt2(char *command)
 {
-    int    i;
-    int    j;
-    int    k;
-    char    **cmd;
+	int		i;
+	int		j;
+	int		k;
+	char	**cmd;
 
-    i = 0;
-    k = 0;
-    cmd = malloc(sizeof(char *) * 16);
-    while (command[i])
-    {
-        j = 0;
-        if ((command[i] != '>' && command[i] != '<') && command[i] != ' ')
-        {
-            cmd[k] = malloc(sizeof(char) * 1000);
-            while (command[i] && command[i] != ' ' && (command[i] != '>' && command[i] != '<'))
-                cmd[k][j++] = command[i++];
-            cmd[k++][j] = '\0'; 
-        }
-        if (command[i] == '>' || command[i] == '<')
-        {
+	i = 0;
+	k = 0;
+	cmd = malloc(sizeof(char *) * 16);
+	while (command[i])
+	{
+		j = 0;
+		if ((command[i] != '>' && command[i] != '<') && command[i] != ' ')
+		{
+			cmd[k] = malloc(sizeof(char) * 1000);
+			while (command[i] && command[i] != ' ' && (command[i] != '>' && command[i] != '<'))
+				cmd[k][j++] = command[i++];
+			cmd[k++][j] = '\0';
+		}
+		if (command[i] == '>' || command[i] == '<')
+		{
 			j = 0;
-            cmd[k] = malloc(sizeof(char) * 100);
-            cmd[k][j++] = command[i];
+			cmd[k] = malloc(sizeof(char) * 100);
+			cmd[k][j++] = command[i];
 			cmd[k][j] = '\0';
 			k++;
-        }
-        i++;
-    }
-    cmd[k] = NULL;
-    return(cmd);
-}
-
-char **ft_parser(char *command)
-{
-	ft_parse(command);
-	return (0);
+		}
+		i++;
+	}
+	cmd[k] = NULL;
+	return(cmd);
 }
 
 char *merge(char **command)
@@ -118,31 +111,20 @@ char *merge(char **command)
 			arr[k++] = command[i][j++];
 		if (command[i + 1])
 			arr[k++] = ' ';
-		i++; 
+		i++;
 	}
 	return (arr);
 }
 
-char **ft_parse(char *command)
+char **ft_parser(char *command)
 {
 	char	**cmd;
 
-	if(!ft_check(command))
+	if (!ft_check(command))
 		cmd = splt(command);
 	else
 		cmd = ft_split(command, ' ');
 	command = merge(cmd);
 	cmd = splt2(command);
-	int i = 0;
-	while (!(command = getenv(cmd[i] + 1)))
-		i++;
-	if (command)
-		printf("%s\n", command);
-	chdir("..");
-	i = 0;
-	while (!(command = getenv(cmd[i] + 1)))
-		i++;
-	if (command)
-		printf("%s\n", command);
 	return (cmd);
 }
