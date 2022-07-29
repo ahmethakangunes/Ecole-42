@@ -6,13 +6,13 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:03 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/29 13:49:46 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/29 19:30:43 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int main(void)
+int	main(void)
 {
 	if (!ft_minishell())
 		return (0);

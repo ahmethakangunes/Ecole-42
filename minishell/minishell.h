@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scoskun <scoskun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/29 13:17:57 by scoskun          ###   ########.fr       */
+/*   Updated: 2022/07/29 19:24:04 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@
 # include <fcntl.h>
 
 char	*ft_prompt(void);
-int     ft_minishell(void);
+int		ft_minishell(void);
 char	*kms(void);
-char    **ft_parser(char *s1);
-void    runcommand(char **command);
-void	ft_searchfor(char *arr, char **args, int	a, int last);
+char	**ft_parser(char *s1);
+void	runcommand(char **command);
+void	ft_searchfor(char *arr, char **args, int a, int last);
+void	ft_execve(char *arr, char *bin, char *usr, char **lst);
 
 #endif

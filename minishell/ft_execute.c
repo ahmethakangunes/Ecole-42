@@ -6,24 +6,20 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 11:29:59 by scoskun           #+#    #+#             */
-/*   Updated: 2022/07/29 13:47:19 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/29 19:28:49 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	ft_searchfor(char *arr, char **args, int	a, int last)
+void	ft_searchfor(char *arr, char **args, int a, int last)
 {
 	char	*usr;
 	char	*bin;
-	int		pid;
 	char	**lst;
 	int		i;
-	int		j;
 
-	pid = 0;
 	i = 0;
-	j = 0;
 	bin = malloc(1000);
 	lst = malloc(1000);
 	usr = malloc(1000);
@@ -37,28 +33,35 @@ void	ft_searchfor(char *arr, char **args, int	a, int last)
 		i++;
 		a++;
 	}
+	ft_execve(arr, bin, usr, lst);
+}
+
+void	ft_execve(char *arr, char *bin, char *usr, char **lst)
+{
+	int	pid;
+
+	pid = 0;
 	pid = fork();
 	if (pid == 0)
 	{
 		if (execve(bin, lst, NULL) != -1)
-			return;
-		if (execvp(usr, lst) != -1)
+			return ;
+		if (execve(usr, lst, NULL) != -1)
 			return ;
 		if (execve(arr, lst, NULL) == -1)
 		{
 			printf("evet\n");
-			return;
+			return ;
 		}
 	}
 	else
 		wait(NULL);
-	
 }
 
-void    runcommand(char **command)
+void	runcommand(char **command)
 {
 	int	i;
-	int x;
+	int	x;
 	int	pid;
 
 	i = 0;
@@ -67,12 +70,4 @@ void    runcommand(char **command)
 	while (command[x] && command[x][0] != '|')
 		x++;
 	ft_searchfor(command[i], command, i, x);
-/* 	pid = fork();
-	while (command[i])
-	{
-		if(pid == 0)
-			printf("%d\n",execve("/bin/ls",,NULL));
-		else
-			wait(NULL);
-	}*/
 }

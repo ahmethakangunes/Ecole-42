@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scoskun <scoskun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 11:39:05 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/29 12:35:56 by scoskun          ###   ########.fr       */
+/*   Updated: 2022/07/29 19:26:27 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	**splt(char *command)
 	return (cmd);
 }
 
-char **splt2(char *command)
+char	**splt2(char *command)
 {
 	int		i;
 	int		j;
@@ -76,7 +76,8 @@ char **splt2(char *command)
 		if ((command[i] != '>' && command[i] != '<') && command[i] != ' ')
 		{
 			cmd[k] = malloc(sizeof(char) * 1000);
-			while (command[i] && command[i] != ' ' && (command[i] != '>' && command[i] != '<'))
+			while (command[i] && command[i] != ' ' && (command[i] != '>' && \
+			command[i] != '<'))
 				cmd[k][j++] = command[i++];
 			cmd[k++][j] = '\0';
 		}
@@ -91,23 +92,23 @@ char **splt2(char *command)
 		i++;
 	}
 	cmd[k] = NULL;
-	return(cmd);
+	return (cmd);
 }
 
-char *merge(char **command)
+char	*merge(char **command)
 {
-	char *arr;
-	int	i;
-	int	j;
-	int	k;
+	char	*arr;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	k = 0;
 	arr = malloc(1000);
-	while(command[i])
+	while (command[i])
 	{
 		j = 0;
-		while(command[i][j])
+		while (command[i][j])
 			arr[k++] = command[i][j++];
 		if (command[i + 1])
 			arr[k++] = ' ';
@@ -116,7 +117,7 @@ char *merge(char **command)
 	return (arr);
 }
 
-char **ft_parser(char *command)
+char	**ft_parser(char *command)
 {
 	char	**cmd;
 
