@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 11:39:05 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/29 19:26:27 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/30 11:54:19 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,8 @@ char	**splt(char *command)
 
 	i = -1;
 	k = 0;
-	cmd = malloc(sizeof(char *) * 10);
-	while (command[++i])
-	{
-		j = 0;
-		if (command[i] != '"' && command[i] != ' ')
-		{
-			cmd[k] = malloc(sizeof(char) * 1000);
-			while (command[i] && command[i] != '"' && command[i] != ' ')
-				cmd[k][j++] = command[i++];
-			cmd[k++][j] = '\0';
-		}
-		if (command[i] == '"')
-		{
-			i++;
-			cmd[k] = malloc(sizeof(char) * 1000);
-			j = 0;
-			while (command[i] && command[i] != '"')
-				cmd[k][j++] = command[i++];
-			cmd[k++][j] = '\0';
-		}
-	}
-	cmd[k] = NULL;
+	j = 0;
+	cmd = spltnorm(command, i, k, j);
 	return (cmd);
 }
 
@@ -69,29 +49,8 @@ char	**splt2(char *command)
 
 	i = 0;
 	k = 0;
-	cmd = malloc(sizeof(char *) * 16);
-	while (command[i])
-	{
-		j = 0;
-		if ((command[i] != '>' && command[i] != '<') && command[i] != ' ')
-		{
-			cmd[k] = malloc(sizeof(char) * 1000);
-			while (command[i] && command[i] != ' ' && (command[i] != '>' && \
-			command[i] != '<'))
-				cmd[k][j++] = command[i++];
-			cmd[k++][j] = '\0';
-		}
-		if (command[i] == '>' || command[i] == '<')
-		{
-			j = 0;
-			cmd[k] = malloc(sizeof(char) * 100);
-			cmd[k][j++] = command[i];
-			cmd[k][j] = '\0';
-			k++;
-		}
-		i++;
-	}
-	cmd[k] = NULL;
+	j = 0;
+	cmd = splt2norm(command, i, k, j);
 	return (cmd);
 }
 

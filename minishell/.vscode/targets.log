@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Fri Jul 29 19:24:25 2022
+# Make data base, printed on Sat Jul 30 11:45:45 2022
 
 # Variables
 
@@ -16,27 +16,29 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# environment
+VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# makefile (from `Makefile', line 14)
+# makefile (from `Makefile', line 15)
 B = "\033[34m"
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
 @F = $(notdir $@)
-# makefile (from `Makefile', line 13)
+# makefile (from `Makefile', line 14)
 G = "\033[32m"
 # makefile
 CURDIR := /Users/agunes/Desktop/Ecole-42/minishell
 # makefile
 SHELL = /bin/sh
-# makefile (from `Makefile', line 12)
+# makefile (from `Makefile', line 13)
 R = "\033[31m"
 # environment
-VSCODE_NLS_CONFIG = {"locale":"tr","availableLanguages":{"*":"tr"},"_languagePackId":"4f2ceba694e4d29d50aafad35d291270.tr","_translationsConfigFile":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr/tcf.json","_cacheRoot":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr","_resolvedLanguagePackCoreLocation":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr/3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr/corrupted.info","_languagePackSupport":true}
-# makefile (from `Makefile', line 15)
+VSCODE_NLS_CONFIG = {"locale":"tr","availableLanguages":{"*":"tr"},"_languagePackId":"4f2ceba694e4d29d50aafad35d291270.tr","_translationsConfigFile":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr/tcf.json","_cacheRoot":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr","_resolvedLanguagePackCoreLocation":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr/054a9295330880ed74ceaedda236253b4f39a335","_corruptedFile":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr/corrupted.info","_languagePackSupport":true}
+# makefile (from `Makefile', line 16)
 X = "\033[0m"
-# makefile (from `Makefile', line 11)
+# makefile (from `Makefile', line 12)
 Y = "\033[33m"
 # environment
 _ = /usr/bin/make
@@ -44,39 +46,47 @@ _ = /usr/bin/make
 CFLAGS = -Wall -Wextra -Werror -lreadline -g
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
-# makefile (from `Makefile', line 16)
+# environment
+VSCODE_NODE_CACHED_DATA_DIR = /Users/agunes/Library/Application Support/Code/CachedData/054a9295330880ed74ceaedda236253b4f39a335
+# makefile (from `Makefile', line 17)
 UP = "\033[A"
-# makefile (from `Makefile', line 19)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from `Makefile', line 20)
 OBJS = $(SRCS:.c=.o)
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc2000330h/T/vscode-ipc-cc04acf2-c77f-47ba-b34d-e335fd368673.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin:/Users/agunes/goinfre/homebrew/bin:/Users/agunes/goinfre/homebrew/bin:/Users/agunes/goinfre/homebrew/bin:/Users/agunes/goinfre/homebrew/bin:/Users/agunes/goinfre/homebrew/bin
 # environment
+VSCODE_LOG_STACK = false
+# environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.oBq5dl2Dos/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.bsnRsbRcsn/Listeners
 # automatic
 %F = $(notdir $%)
-# makefile (from `Makefile', line 20)
+# makefile (from `Makefile', line 21)
 PRIN = ./libft/libft.a
+# environment
+VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /Users/agunes/Desktop/Ecole-42/minishell
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
 # environment
 HOME = /Users/agunes
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/agunes/Library/Application Support/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
-# environment
 LOGNAME = agunes
-# makefile (from `Makefile', line 17)
+# makefile (from `Makefile', line 18)
 CUT = "\033[K"
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
@@ -91,7 +101,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 4)
-SRCS = main.c utils.c ft_minishell.c ft_parser.c ft_execute.c 
+SRCS = main.c utils.c ft_minishell.c ft_parser.c ft_execute.c ft_parser2.c 
 # environment
 SHLVL = 1
 # makefile (from `Makefile', line 2)
@@ -114,12 +124,9 @@ MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cc2000330h/T/
 # automatic
 *F = $(notdir $*)
- 
 # environment
-VSCODE_IPC_HOOK = /Users/agunes/Library/Application Support/Code/1.69.2-main.sock
-# environment
-MallocNanoZone = 0
-# makefile (from `Makefile', line 21)
+VSCODE_IPC_HOOK = /Users/agunes/Library/Application Support/Code/1.56.2-main.sock
+# makefile (from `Makefile', line 22)
 RED = '\033[0;31m'
 # makefile
 MAKEFLAGS = Rrqp
@@ -128,7 +135,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2392
+XPC_SERVICE_NAME = com.microsoft.VSCode.2172
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -152,9 +159,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 18067
+VSCODE_PID = 64723
 # variable set hash-table stats:
-# Load=70/1024=7%, Rehash=0, Collisions=3/105=3%
+# Load=74/1024=7%, Rehash=0, Collisions=3/109=3%
 
 # Pattern-specific Variable Values
 
@@ -162,14 +169,14 @@ VSCODE_PID = 18067
 
 # Directories
 
-# . (device 16777225, inode 2882139): 13 files, no impossibilities.
+# . (device 16777225, inode 2882139): 15 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.c
-#  commands to execute (from `Makefile', line 31):
+#  commands to execute (from `Makefile', line 32):
 	@echo $(R)Complining: [$<]
 	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
 	
@@ -208,7 +215,7 @@ all: libft/libft.a minishell
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-29 13:49:46
+#  Last modified 2022-07-29 19:30:43
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -229,20 +236,20 @@ ft_parser.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-29 13:41:25
+#  Last modified 2022-07-30 11:45:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-minishell: main.o utils.o ft_minishell.o ft_parser.o ft_execute.o libft/libft.a
+minishell: main.o utils.o ft_minishell.o ft_parser.o ft_execute.o ft_parser2.o libft/libft.a
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
-#  commands to execute (from `Makefile', line 27):
+#  commands to execute (from `Makefile', line 28):
 	@$(CC) ${CFLAGS} $(OBJS) -o $(NAME) $(PRIN)
 	@echo "\033[1;96mMinishell ready.\033[1;96m"
 	
@@ -252,7 +259,7 @@ libft/libft.a:
 #  Last modified 2022-07-29 13:41:25
 #  File has been updated.
 #  Successfully updated.
-#  commands to execute (from `Makefile', line 24):
+#  commands to execute (from `Makefile', line 25):
 	@make -C ./libft
 	
 
@@ -261,7 +268,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 39):
+#  commands to execute (from `Makefile', line 40):
 	@rm -rf ${NAME}
 	@echo $(R)Removed [$(NAME)]$(B)
 	
@@ -270,7 +277,7 @@ norm:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 45):
+#  commands to execute (from `Makefile', line 46):
 	norminette *.c
 	
 
@@ -291,10 +298,17 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 35):
+#  commands to execute (from `Makefile', line 36):
 	@rm -rf ${OBJS}
+ 
 	@echo $(R)Removed [$(OBJS)]$(B)
 	
+
+# Not a target:
+ft_parser2.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 utils.o:
@@ -326,13 +340,13 @@ main.o: main.c
 # ? := main.c
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/15=7%
-#  commands to execute (from `Makefile', line 31):
+#  commands to execute (from `Makefile', line 32):
 	@echo $(R)Complining: [$<]
 	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
 	
 
 # files hash-table stats:
-# Load=17/1024=2%, Rehash=0, Collisions=0/48=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/50=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -344,6 +358,6 @@ main.o: main.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jul 29 19:24:25 2022
+# Finished Make data base on Sat Jul 30 11:45:45 2022
 
  
