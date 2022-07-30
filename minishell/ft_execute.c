@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 11:29:59 by scoskun           #+#    #+#             */
-/*   Updated: 2022/07/29 19:28:49 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/30 15:57:17 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_execve(char *arr, char *bin, char *usr, char **lst)
 		wait(NULL);
 }
 
-void	runcommand(char **command)
+void	runcommand(char **command, char **env)
 {
 	int	i;
 	int	x;
@@ -67,7 +67,8 @@ void	runcommand(char **command)
 	i = 0;
 	x = 0;
 	pid = 0;
-	while (command[x] && command[x][0] != '|')
+	ft_builtinsearch(command, env);
+/* 	while (command[x] && command[x][0] != '|')
 		x++;
-	ft_searchfor(command[i], command, i, x);
+	ft_searchfor(command[i], command, i, x); */
 }

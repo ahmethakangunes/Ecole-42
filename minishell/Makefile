@@ -9,24 +9,23 @@ SRCS = main.c \
 	ft_parser2.c	\
 
 # colors for printing
-Y = "\033[33m"
-R = "\033[31m"
-G = "\033[32m"
-B = "\033[34m"
-X = "\033[0m"
-UP = "\033[A"
-CUT = "\033[K"
+
 
 OBJS= $(SRCS:.c=.o)
 PRIN = ./libft/libft.a
 RED = '\033[0;31m'
-all: $(PRIN)  ${NAME}
-$(PRIN):
-	@make -C ./libft
+BUILTIN = ./builtin/builtin.a
 
-$(NAME): $(OBJS) $(PRIN)
-	@$(CC) ${CFLAGS} $(OBJS) -o $(NAME) $(PRIN)
-	@echo "\033[1;96mMinishell ready.\033[1;96m"
+all: $(PRIN) ${BUILTIN} ${NAME}
+
+$(PRIN):
+	@make -C libft/
+$(BUILTIN):
+	@make -C builtin/
+
+$(NAME): $(OBJS) $(PRIN) $(BUILTIN)
+	@$(CC) ${CFLAGS} $(OBJS) -o $(NAME) $(PRIN) $(BUILTIN)
+	@echo "Minishell ready."
 
 %.o: %.c
 	@echo $(R)Complining: [$<]
@@ -34,11 +33,13 @@ $(NAME): $(OBJS) $(PRIN)
 
 clean:
 	@rm -rf ${OBJS}
-	@echo $(R)Removed [$(OBJS)]$(B)
+	@make clean -C builtin/
+	@echo [$(OBJS)]$(B)
 
 fclean: clean
 	@rm -rf ${NAME}
-	@echo $(R)Removed [$(NAME)]$(B)
+	@make fclean -C builtin/
+	@echo [$(NAME)]$(B)
 
 re: fclean all
 

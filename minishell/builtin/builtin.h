@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   builtin.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 11:41:03 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/30 13:45:50 by agunes           ###   ########.fr       */
+/*   Created: 2022/07/30 13:14:13 by agunes            #+#    #+#             */
+/*   Updated: 2022/07/30 14:02:34 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#ifndef BUILTIN_H
+# define BUILTIN_H
 
-int	main(int argc, char **argv, char **env)
-{
-	argc = 0;
-	argv = 0;
-	if (!ft_minishell(env))
-		return (0);
-}
+# include "../minishell.h"
+
+void	ft_cd(char *command, char **env);
+void	envupdate(char *buff, char *old, char **env);
+void	ft_env(char **env);
+int		ft_builtinsearch(char **command, char **env);
+
+#endif
