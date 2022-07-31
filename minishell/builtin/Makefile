@@ -5,6 +5,7 @@ ARFLAGS = -rcs
 SRCS = cd.c		\
 	env.c 		\
 	ft_builtin.c	\
+	echo.c			\
 
 # colors for printing
 PRIN = ../libft/libft.a
