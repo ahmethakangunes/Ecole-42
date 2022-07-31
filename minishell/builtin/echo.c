@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 12:48:17 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/31 12:57:57 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/31 14:58:23 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ void	ft_echo(char *command)
 	while (command[i])
 		i++;
 	write(1, command, i);
-	write(1, " ", 1);
 }

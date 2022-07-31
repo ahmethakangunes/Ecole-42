@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 11:29:59 by scoskun           #+#    #+#             */
-/*   Updated: 2022/07/31 13:00:50 by agunes           ###   ########.fr       */
+/*   Updated: 2022/07/31 16:41:13 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,30 @@ void	runcommand(char **command, char **env)
 	x = 0;
 	pid = 0;
 	ft_builtinsearch(command, env);
- 	while (command[x] && command[x][0] != '|')
+	while (command[x] && command[x][0] != '|')
 		x++;
-	ft_searchfor(command[i], command, i, x);
+	if (ft_commandsearch(command[i]))
+		ft_searchfor(command[i], command, i, x);
+}
+
+int	ft_commandsearch(char *command)
+{
+	int	i;
+
+	i = 0;
+	if (ft_strcmp(command, "echo"))
+		return (0);
+	if (ft_strcmp(command, "cd"))
+		return (0);
+	if (ft_strcmp(command, "env"))
+		return (0);
+	if (ft_strcmp(command, "pwd"))
+		return (0);
+	if (ft_strcmp(command, "unset"))
+		return (0);
+	if (ft_strcmp(command, "exit"))
+		return (0);
+	if (ft_strcmp(command, "export"))
+		return (0);
+	return (1);
 }

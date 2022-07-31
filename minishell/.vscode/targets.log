@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sun Jul 31 12:48:27 2022
+# Make data base, printed on Sun Jul 31 16:32:51 2022
 
 # Variables
 
@@ -27,7 +27,7 @@ CURDIR := /Users/agunes/Desktop/Ecole-42/minishell
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"tr","availableLanguages":{"*":"tr"},"_languagePackId":"4f2ceba694e4d29d50aafad35d291270.tr","_translationsConfigFile":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr/tcf.json","_cacheRoot":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr","_resolvedLanguagePackCoreLocation":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr/3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"/Users/agunes/Library/Application Support/Code/clp/4f2ceba694e4d29d50aafad35d291270.tr/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"tr","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 3)
@@ -35,6 +35,7 @@ CFLAGS = -Wall -Wextra -Werror -lreadline -g
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 14)
+ 
 OBJS = $(SRCS:.c=.o)
 # environment
 VSCODE_CWD = /
@@ -45,7 +46,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.viys6ythzf/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.wHyu8dPnig/Listeners
 # automatic
 %F = $(notdir $%)
 # makefile (from `Makefile', line 15)
@@ -65,14 +66,13 @@ VSCODE_CODE_CACHE_PATH = /Users/agunes/Library/Application Support/Code/CachedDa
 # environment
 LOGNAME = agunes
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
- 
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -140,7 +140,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 29101
+VSCODE_PID = 3360
 # variable set hash-table stats:
 # Load=64/1024=6%, Rehash=0, Collisions=3/100=3%
 
@@ -150,9 +150,9 @@ VSCODE_PID = 29101
 
 # Directories
 
-# . (device 16777225, inode 2903552): 14 files, no impossibilities.
+# . (device 16777225, inode 2903552): 16 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -333,6 +333,6 @@ builtin/builtin.a:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Jul 31 12:48:27 2022
+# Finished Make data base on Sun Jul 31 16:32:51 2022
 
  

@@ -6,6 +6,7 @@ SRCS = cd.c		\
 	env.c 		\
 	ft_builtin.c	\
 	echo.c			\
+	pwd.c			\
 
 # colors for printing
 PRIN = ../libft/libft.a
