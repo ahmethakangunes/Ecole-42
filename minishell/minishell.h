@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/01 13:35:58 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/01 14:52:19 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int		ft_minishell(char **env);
 char	*kms(void);
 char	**ft_parser(char *s1);
 void	runcommand(char **command, char **env);
-void	ft_searchfor(char *arr, char **args, int last, char **env);
-int		ft_execve(char *arr, char **lst);
+void	ft_searchfor(char *arr, char **args, char **path, char **env);
+int		ft_execve(char *arr, char **lst, char **env);
 char	**spltnorm(char *command, int i, int k, int j);
 char	**splt2norm(char *command, int i, int k, int j);
 int		ft_builtinsearch(char **command, char **env);
