@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/01 14:52:19 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/01 15:41:14 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <errno.h>
 # include <string.h>
 # include <fcntl.h>
+# include <signal.h>
 
 char	*ft_prompt(char **env);
 int		ft_minishell(char **env);

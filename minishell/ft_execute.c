@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 11:29:59 by scoskun           #+#    #+#             */
-/*   Updated: 2022/08/01 15:12:42 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/01 15:50:50 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,16 @@ int	ft_execve(char *arr, char **lst, char **env)
 	if (pid == 0)
 	{
 		if (execve(arr, lst, env) == -1)
+		{
+			kill(getpid(), SIGTERM);
 			return (-1);
+		}
+		kill(getpid(), SIGTERM);
 	}
 	else
+	{
 		wait(NULL);
+	}
 	return (0);
 }
 
