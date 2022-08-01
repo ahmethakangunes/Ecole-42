@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 11:29:59 by scoskun           #+#    #+#             */
-/*   Updated: 2022/07/31 16:41:13 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/01 10:58:34 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ void	ft_searchfor(char *arr, char **args, int a, int last)
 		a++;
 	}
 	ft_execve(arr, bin, usr, lst);
+	free(bin);
+	free(lst);
+	free(usr);
 }
 
 void	ft_execve(char *arr, char *bin, char *usr, char **lst)
@@ -50,7 +53,7 @@ void	ft_execve(char *arr, char *bin, char *usr, char **lst)
 			return ;
 		if (execve(arr, lst, NULL) == -1)
 		{
-			printf("evet\n");
+			printf("zsh: command not found: %s\n", arr);
 			return ;
 		}
 	}
