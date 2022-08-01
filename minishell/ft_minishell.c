@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 11:14:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/31 17:50:07 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/01 12:27:08 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ int	ft_minishell(char **env)
 	{
 		command = readline(ft_prompt(env));
 		cmdlst = ft_parser(command);
-		runcommand(cmdlst, env);
-		free(cmdlst);
+		if(cmdlst)
+		{
+			runcommand(cmdlst, env);
+			free(cmdlst);
+		}
 		add_history(command);
 	}
 	return (1);

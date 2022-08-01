@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 12:22:09 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/31 17:50:54 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/01 11:29:58 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static int	yenidizisayi(char const *s, char c)
 			while (s[i] != '\0' && s[i] != c)
 				i++;
 		}
-		printf("TOTOŞ\n");
 	}
 	return (count);
 }

@@ -34,11 +34,13 @@ $(NAME): $(OBJS) $(PRIN) $(BUILTIN)
 clean:
 	@rm -rf ${OBJS}
 	@make clean -C builtin/
+	@make clean -C libft/
 	@echo [$(OBJS)]$(B)
 
 fclean: clean
 	@rm -rf ${NAME}
 	@make fclean -C builtin/
+	@make clean -C libft/
 	@echo [$(NAME)]$(B)
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 10:55:41 by agunes            #+#    #+#             */
-/*   Updated: 2022/07/30 15:13:28 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/01 11:41:04 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,20 +63,20 @@ char	*ft_prompt(char **env)
 	return (pr);
 }
 
-int	ft_strcmp(char *command, char *arr)
+int	ft_strcmp(char *arr, char *arr1)
 {
 	int	i;
-	int	x;
 
 	i = 0;
-	x = 0;
-	while ((command && arr) && (command[i] && arr[i]))
+	if (!arr || !arr1)
+		return (-1);
+	while ((arr[i] && arr1[i]))
 	{
-		if (command[i] == arr[i])
-			x++;
+		if (arr[i] != arr1[i])
+			return (-1);
 		i++;
 	}
-	if (i == x && i != 0)
-		return (1);
+	if (arr1[i] != '\0')
+		return (-1);
 	return (0);
 }
