@@ -3,6 +3,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -lreadline -g
 SRCS = main.c \
 	utils.c		\
+	ft_parser.c	\
+	ft_parser2.c	\
+	ft_execute.c	\
 
 # colors for printing
 
