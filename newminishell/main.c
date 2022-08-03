@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:33:50 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 12:44:05 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 13:43:17 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(int argc, char **argv, char **env)
 	while (1)
 	{
 		g_shell->command = readline("minishell % ");
-		free(g_shell->promt);
 		if (g_shell->command[0] != 0)
 		{
 			g_shell->commandlist = ft_parser(g_shell->command);
@@ -31,6 +30,7 @@ int	main(int argc, char **argv, char **env)
 				free(g_shell->commandlist);
 			}
 			add_history(g_shell->command);
+			free(g_shell->command);
 		}
 	}
 	return (0);

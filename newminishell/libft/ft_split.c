@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 12:22:09 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 10:26:29 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 13:38:21 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ char	**ft_split(char *s, char c)
 		if (!array)
 			return (NULL);
 		splitit(array, s, c, mallocsayi);
-		free(s);
 		return (array);
 	}
 	return (0);

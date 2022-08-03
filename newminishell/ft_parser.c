@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:06:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 12:44:29 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 13:28:51 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_check(char *arr)
 	d = 0;
 	s = 0;
 	i = 0;
-	while (arr[i])
+	while (arr && arr[i])
 	{
 		if (arr[i] == '\"')
 			d++;
@@ -33,7 +33,7 @@ int	ft_check(char *arr)
 		return (-1);
 	if (d != 0)
 		return (0);
-	return (1);
+	return (0);
 }
 
 char	**splt(char *command)
@@ -94,21 +94,10 @@ char	**ft_parser(char *command)
 {
 	char	**cmd;
 
-	if (ft_check(command) == -1)
-	{
-		write(2, "Syntax Error\n", 13);
-		return (NULL);
-	}
-	if (ft_check(command) == 0)
-		cmd = splt(command);
-	else
+	cmd = NULL;
+	if (ft_strchr(command, '|'))
+		cmd = ft_split(command, '|');
+	else if (ft_check(command) == 0)
 		cmd = ft_split(command, ' ');
-	command = merge(cmd);
-	cmd = splt2(command);
-	command = merge(cmd);
-	cmd = ft_split(command, '|');
-	int i = 0;
-	while(cmd[i])
-		printf("%s\n", cmd[i++]);
 	return (cmd);
 }

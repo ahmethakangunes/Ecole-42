@@ -6,29 +6,18 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 12:48:17 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/01 11:59:42 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 13:51:38 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "builtin.h"
-
-/* void	ft_echo(char *command)
-{
-	int	i;
-
-	i = 0;
-	while (command[i])
-		i++;
-	write(1, command, i);
-}
- */
 
 void	ft_echo(char **arg)
 {
 	int	i;
 	int	fl;
 
-	if (ft_strncmp(arg[1], "-n", 2) == 0)
+	if (arg[1] && ft_strcmp(arg[1], "-n") == 0)
 	{
 		i = 2;
 		fl = 1;
@@ -38,6 +27,11 @@ void	ft_echo(char **arg)
 		i = 1;
 		fl = 0;
 	}
+	if (fl == 0 && arg[1] == NULL)
+	{
+		printf("\n");
+		return ;
+	}	
 	while (arg[i])
 	{
 		if (arg[i][0] == '\"' || arg[i][0] == '\'')
