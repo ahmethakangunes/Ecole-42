@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:33:50 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 12:42:39 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 12:44:05 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char **argv, char **env)
 		free(g_shell->promt);
 		if (g_shell->command[0] != 0)
 		{
-			printf("test\n");
 			g_shell->commandlist = ft_parser(g_shell->command);
 			if (g_shell->commandlist)
 			{

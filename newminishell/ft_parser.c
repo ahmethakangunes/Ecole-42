@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:06:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 12:25:41 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 12:44:29 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ char	**splt(char *command)
 	k = 0;
 	j = 0;
 	cmd = spltnorm(command, i, k, j);
-	printf("%p\n", command);
 	free(command);
 	return (cmd);
 }
@@ -108,5 +107,8 @@ char	**ft_parser(char *command)
 	cmd = splt2(command);
 	command = merge(cmd);
 	cmd = ft_split(command, '|');
+	int i = 0;
+	while(cmd[i])
+		printf("%s\n", cmd[i++]);
 	return (cmd);
 }
