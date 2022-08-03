@@ -6,13 +6,13 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 12:53:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 15:32:51 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 16:21:59 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "builtin.h"
 
-void	ft_cd(char *command, char **env)
+int	ft_cd(char *command, char **env)
 {
 	char	*buff;
 	char	*buff2;
@@ -33,6 +33,7 @@ void	ft_cd(char *command, char **env)
 		buff2 = getcwd(NULL, 0);
 		envupdate(buff, buff2, env);
 	}
+	return (1);
 }
 
 void	envupdate(char *buff, char *old, char **env)

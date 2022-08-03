@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:08:36 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 15:50:00 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 16:33:04 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,41 +44,21 @@ int	ft_execve(char *arr, char **lst, char **env)
 	return (0);
 }
 
-void	ft_searchfor(void)
+int	ft_searchfor2(int flag, int i)
 {
-	int		i;
-	int		flag;
-	char	**lst;
-
-	i = -1;
-	flag = 0;
-	lst = malloc(100);
-	while (g_shell->path[++i])
-	{
-		g_shell->path[i] = ft_strjoin(g_shell->path[i], "/");
-		g_shell->path[i] = ft_strjoin(g_shell->path[i], \
-		g_shell->commandlist[0]);
-	}
-	i = -1;
-	while (g_shell->commandlist && g_shell->commandlist[++i])
-		lst[i] = ft_strdup(g_shell->commandlist[i]);
-	lst[i] = NULL;
-	i = -1;
 	while (g_shell->path[++i])
 	{
 		if (access(g_shell->path[i], F_OK) == 0)
 		{
 			flag = 2;
-			ft_execve(g_shell->path[i], lst, g_shell->env);
-			break ;
+			ft_execve(g_shell->path[i], g_shell->lst, g_shell->env);
 		}
 		if (ft_strchr(g_shell->commandlist[0], '/'))
 		{
 			if (access(g_shell->commandlist[0], X_OK) == 0)
 			{
 				flag = 2;
-				ft_execve(g_shell->commandlist[0], lst, g_shell->env);
-				break ;
+				ft_execve(g_shell->commandlist[0], g_shell->lst, g_shell->env);
 			}
 			else if (access(g_shell->commandlist[0], X_OK) == -1)
 				flag = 1;
@@ -89,6 +69,29 @@ void	ft_searchfor(void)
 		printf("minishell: command not found: %s\n", \
 		(ft_strrchr(g_shell->path[0], '/') + 1));
 	}
+	return (flag);
+}
+
+void	ft_searchfor(void)
+{
+	int		i;
+	int		flag;
+
+	i = -1;
+	flag = 0;
+	g_shell->lst = malloc(100);
+	while (g_shell->path[++i])
+	{
+		g_shell->path[i] = ft_strjoin(g_shell->path[i], "/");
+		g_shell->path[i] = ft_strjoin(g_shell->path[i], \
+		g_shell->commandlist[0]);
+	}
+	i = -1;
+	while (g_shell->commandlist && g_shell->commandlist[++i])
+		g_shell->lst[i] = ft_strdup(g_shell->commandlist[i]);
+	g_shell->lst[i] = NULL;
+	i = -1;
+	flag = ft_searchfor2(flag, i);
 	if (flag == 1)
 		printf("%s\n", strerror(errno));
 }
@@ -99,29 +102,6 @@ void	runcommand(void)
 
 	i = 0;
 	ft_path();
-	ft_builtinsearch();
-	if (ft_commandsearch())
+	if (ft_builtinsearch() == 0)
 		ft_searchfor();
-}
-
-int	ft_commandsearch(void)
-{
-	int	i;
-
-	i = 0;
-	if (!ft_strcmp(g_shell->commandlist[0], "echo"))
-		return (0);
-	if (!ft_strcmp(g_shell->commandlist[0], "cd"))
-		return (0);
-	if (!ft_strcmp(g_shell->commandlist[0], "env"))
-		return (0);
-	if (!ft_strcmp(g_shell->commandlist[0], "pwd"))
-		return (0);
-	if (!ft_strcmp(g_shell->commandlist[0], "unset"))
-		return (0);
-	if (!ft_strcmp(g_shell->commandlist[0], "exit"))
-		return (0);
-	if (!ft_strcmp(g_shell->commandlist[0], "export"))
-		return (0);
-	return (1);
 }

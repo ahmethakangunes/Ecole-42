@@ -6,17 +6,18 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 12:52:27 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/02 13:52:38 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 16:22:15 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "builtin.h"
 
-void	ft_env(char **env)
+int	ft_env(char **env)
 {
 	int	i;
 
 	i = 0;
 	while (env[i])
 		printf("%s\n", env[i++]);
+	return (1);
 }
