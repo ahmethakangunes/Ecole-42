@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:08:36 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 15:25:47 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 15:50:00 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	ft_searchfor(void)
 	}
 	if (flag == 0)
 	{
-		printf("zsh: command not found: %s\n", \
+		printf("minishell: command not found: %s\n", \
 		(ft_strrchr(g_shell->path[0], '/') + 1));
 	}
 	if (flag == 1)

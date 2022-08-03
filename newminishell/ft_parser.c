@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:06:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 13:28:51 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 15:47:58 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,14 @@ char	**ft_parser(char *command)
 
 	cmd = NULL;
 	if (ft_strchr(command, '|'))
+	{
+		g_shell->pipe_flag = 1;
 		cmd = ft_split(command, '|');
+	}
 	else if (ft_check(command) == 0)
+	{
+		g_shell->pipe_flag = 0;
 		cmd = ft_split(command, ' ');
+	}
 	return (cmd);
 }
