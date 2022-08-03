@@ -1,0 +1,18 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/agunes/Desktop/Ecole-42/newminishell'
+make -C libft/
+make -C builtin/
+echo Complining: [main.c]
+gcc -c main.c -o main.o -Wall -Werror -Wextra
+echo Complining: [utils.c]
+gcc -c utils.c -o utils.o -Wall -Werror -Wextra
+echo Complining: [ft_parser.c]
+gcc -c ft_parser.c -o ft_parser.o -Wall -Werror -Wextra
+echo Complining: [ft_parser2.c]
+gcc -c ft_parser2.c -o ft_parser2.o -Wall -Werror -Wextra
+echo Complining: [ft_execute.c]
+gcc -c ft_execute.c -o ft_execute.o -Wall -Werror -Wextra
+gcc -Wall -Wextra -Werror -lreadline -g main.o utils.o ft_parser.o ft_parser2.o ft_execute.o -o minishell ./libft/libft.a ./builtin/builtin.a
+echo "Minishell ready."
+make: Leaving directory `/Users/agunes/Desktop/Ecole-42/newminishell'
+ 

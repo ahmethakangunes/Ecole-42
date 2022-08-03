@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 13:27:21 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/02 16:50:59 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 10:26:39 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-char	**ft_split(char const *s, char c);	
+char	**ft_split(char *s, char c);	
 char	*ft_itoa(int n);	
 char	*ft_strchr(const char *s, int c);	
 char	*ft_strdup(char *src);		

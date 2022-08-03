@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 12:22:09 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/02 11:19:40 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/03 10:26:29 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static void	*splitit(char **array, char const *s, char c, int mallocsayi)
 	return (array[j]);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	int		mallocsayi;
 	char	**array;
@@ -89,6 +89,7 @@ char	**ft_split(char const *s, char c)
 		if (!array)
 			return (NULL);
 		splitit(array, s, c, mallocsayi);
+		free(s);
 		return (array);
 	}
 	return (0);
