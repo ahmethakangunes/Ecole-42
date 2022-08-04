@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 16:31:24 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 16:26:16 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 13:49:27 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ int	ft_pwd(void)
 
 	pwd = getenv("PWD");
 	printf("%s\n", pwd);
-	return(1);
+	return (1);
 }
