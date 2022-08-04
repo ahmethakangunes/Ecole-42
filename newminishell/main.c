@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:33:50 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 15:07:38 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 15:33:34 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv, char **env)
 				runcommand();
 				ft_free();
 			}
-			else
+			else if (g_shell->command[0] == '|')
 				printf("minishell: parse error near `%s'\n", g_shell->command);
 			add_history(g_shell->command);
 			free(g_shell->command);

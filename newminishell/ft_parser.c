@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:06:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 15:00:59 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 15:43:39 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,17 +93,21 @@ char	*merge(char **command)
 char	**ft_parser(char *command)
 {
 	char	**cmd;
+	int		i;
 
+	i = 0;
 	cmd = NULL;
 	if (ft_strchr(command, '|'))
 	{
 		g_shell->pipe_flag = 1;
 		cmd = ft_split(command, '|');
+		while (cmd[++i + 1])
+			g_shell->pipe_flag++;
 	}
 	else if (ft_check(command) == 0)
 	{
-		g_shell->pipe_flag = 0;
 		cmd = ft_split(command, ' ');
+		g_shell->pipe_flag = 0;
 	}
 	return (cmd);
 }

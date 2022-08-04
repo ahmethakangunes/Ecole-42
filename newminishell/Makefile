@@ -7,6 +7,7 @@ SRCS = main.c \
 	ft_parser2.c	\
 	ft_execute.c	\
 	ft_free.c		\
+	token.c			\
 
 # colors for printing
 

@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 12:53:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 14:56:26 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 15:38:43 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,4 @@ void	envupdate(char *buff, char *old, char **env)
 		}
 		i++;
 	}
-	free(buff);
-	free(old);
 }

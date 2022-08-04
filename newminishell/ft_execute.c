@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:08:36 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 15:10:19 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 16:12:40 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,16 @@ void	runcommand(void)
 	int		i;
 
 	i = 0;
+	//ZURNA SELAM
+	if (g_shell->pipe_flag > 0)
+	{
+		g_shell->program = malloc(sizeof(t_token) * g_shell->pipe_flag);
+		while (g_shell->commandlist[i])
+		{
+			g_shell->program[i] = *create_tokens(g_shell->commandlist[i]);
+			i++;
+		}
+	}
 	ft_path();
 	if (ft_builtinsearch() == 0)
 		ft_searchfor();

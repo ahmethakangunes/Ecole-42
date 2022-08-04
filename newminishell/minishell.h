@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 14:54:17 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 16:06:10 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,9 @@ typedef struct s_token
 {
 	char	**path; //free
 	char	**arglist; //free
+	char	**command;
 	int		fd[2];
-	
-}	t_token;
-
-
-
-
+}		t_token;
 
 
 typedef struct s_shell
@@ -48,12 +44,13 @@ typedef struct s_shell
 	char		*command;
 	int			pipe_flag;
 	int			lstfreeflag;
-	int			envi1;
-	int			envi2;
+	t_token		*program;
+	
 }		t_shell;
 
 t_shell	*g_shell;
 
+t_token	*create_tokens(char *commandlist);
 char	*ft_prompt(void);
 int		ft_strcmp(char *arr, char *arr1);
 char	*ft_strjoin(char *s1, char *s2);
