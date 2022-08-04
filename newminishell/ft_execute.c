@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_execute.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scoskun <scoskun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:08:36 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 10:46:54 by scoskun          ###   ########.fr       */
+/*   Updated: 2022/08/04 10:55:41 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_path(void)
 			break ;
 	}
 	g_shell->path = ft_split(g_shell->env[i], ':');
-	g_shell->path[0] = ft_strdup((ft_strchr(g_shell->path[0], '=') + 1));
 	free(g_shell->path[0]);
+	g_shell->path[0] = ft_strdup((ft_strchr(g_shell->path[0], '=') + 1));
 	i = -1;
 	while (g_shell->path[++i])
 	{
