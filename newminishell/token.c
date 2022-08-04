@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 15:49:29 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 16:39:13 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 16:40:06 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	ft_path1(t_token *program)
 	program->arglist = malloc(sizeof(char *) * 100);
 	while (program->command && program->command[i])
 	{
-		printf("%s\n", program->command[i]);
 		program->arglist[i] = ft_strdup(program->command[i]);
 		i++;
 	}
