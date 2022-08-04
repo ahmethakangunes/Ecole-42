@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 13:14:13 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 16:22:32 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 11:26:10 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ int		ft_echo(char **command);
 int		ft_pwd(void);
 void	ft_exit(void);
 int		ft_export(char *arr, char **env);
+
 #endif

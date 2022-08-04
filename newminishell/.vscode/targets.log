@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Thu Aug  4 10:53:26 2022
+# Make data base, printed on Thu Aug  4 11:27:22 2022
 
 # Variables
 
@@ -23,7 +22,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/agunes/Desktop/newminishell
+CURDIR := /Users/agunes/Desktop/Ecole-42/newminishell
 # makefile
 SHELL = /bin/sh
 # environment
@@ -51,7 +50,7 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.OL9G9UzD82/Listeners
 # makefile (from `Makefile', line 15)
 PRIN = ./libft/libft.a
 # environment
-PWD = /Users/agunes/Desktop/newminishell
+PWD = /Users/agunes/Desktop/Ecole-42/newminishell
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -141,7 +140,7 @@ LANG = C
 # environment
 VSCODE_PID = 76537
 # variable set hash-table stats:
-# Load=64/1024=6%, Rehash=0, Collisions=3/102=3%
+# Load=64/1024=6%, Rehash=0, Collisions=3/98=3%
 
 # Pattern-specific Variable Values
 
@@ -149,7 +148,7 @@ VSCODE_PID = 76537
 
 # Directories
 
-# . (device 16777225, inode 2994287): 20 files, no impossibilities.
+# . (device 16777225, inode 3000308): 20 files, no impossibilities.
 
 # 20 files, no impossibilities in 1 directories.
 
@@ -168,27 +167,11 @@ VSCODE_PID = 76537
 ft_execute.o: ft_execute.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_execute'
-#  Last modified 2022-08-04 10:45:42
+#  Last modified 2022-08-04 11:26:18
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := ft_execute.o
-# automatic
-# % := 
-# automatic
-# * := ft_execute
-# automatic
-# + := ft_execute.c
-# automatic
-# | := 
-# automatic
-# < := ft_execute.c
-# automatic
-# ^ := ft_execute.c
-# automatic
-# ? := ft_execute.c
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 31):
 	@echo $(R)Complining: [$<]
 	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
@@ -203,15 +186,24 @@ ft_parser2.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
+# Not a target:
+ft_free.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-04 11:24:09
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
 all: libft/libft.a builtin/builtin.a minishell
 #  Phony target (prerequisite of .PHONY).
 #  Command-line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 utils.c:
@@ -230,7 +222,7 @@ utils.c:
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-04 10:42:17
+#  Last modified 2022-08-04 11:09:42
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -245,7 +237,7 @@ main.c:
 ft_parser.o: ft_parser.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_parser'
-#  Last modified 2022-08-04 10:45:42
+#  Last modified 2022-08-04 11:26:18
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -258,7 +250,7 @@ ft_parser.o: ft_parser.c
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-04 10:29:09
+#  Last modified 2022-08-04 11:04:53
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -267,7 +259,7 @@ Makefile:
 # Not a target:
 ft_execute.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-04 10:46:54
+#  Last modified 2022-08-04 11:20:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -275,11 +267,11 @@ ft_execute.c:
 
 minishell: main.o utils.o ft_parser.o ft_parser2.o ft_execute.o ft_free.o libft/libft.a builtin/builtin.a
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-04 10:45:42
+#  Last modified 2022-08-04 11:26:18
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 27):
 	@$(CC) ${CFLAGS} $(OBJS) -o $(NAME) $(PRIN) $(BUILTIN)
 	@echo "Minishell ready."
@@ -316,6 +308,7 @@ norm:
 
 # Not a target:
 .DEFAULT:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -323,10 +316,9 @@ norm:
 # Not a target:
 ft_parser.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-04 10:01:29
+#  Last modified 2022-08-04 11:11:12
 #  File has been updated.
 #  Successfully updated.
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -351,7 +343,7 @@ clean:
 ft_parser2.o: ft_parser2.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_parser2'
-#  Last modified 2022-08-04 10:45:42
+#  Last modified 2022-08-04 11:26:18
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -361,16 +353,23 @@ ft_parser2.o: ft_parser2.c
 	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
 	
 
-# Not a target:
-ft_free.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+ft_free.o: ft_free.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_free'
+#  Last modified 2022-08-04 11:26:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 31):
+	@echo $(R)Complining: [$<]
+	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
+	
 
 utils.o: utils.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils'
-#  Last modified 2022-08-04 10:45:42
+#  Last modified 2022-08-04 11:26:18
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -383,7 +382,7 @@ utils.o: utils.c
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2022-08-04 10:45:42
+#  Last modified 2022-08-04 11:26:18
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -395,7 +394,7 @@ main.o: main.c
 
 builtin/builtin.a:
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-04 10:45:42
+#  Last modified 2022-08-04 11:26:18
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 24):
@@ -403,7 +402,7 @@ builtin/builtin.a:
 	
 
 # files hash-table stats:
-# Load=23/1024=2%, Rehash=0, Collisions=0/69=0%
+# Load=24/1024=2%, Rehash=0, Collisions=0/73=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -415,6 +414,6 @@ builtin/builtin.a:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Aug  4 10:53:26 2022
+# Finished Make data base on Thu Aug  4 11:27:22 2022
 
  

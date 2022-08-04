@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 13:27:21 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 10:26:39 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 11:26:14 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,5 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);	
 void	ft_putstr_fd(char *s, int fd);	
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
 #endif

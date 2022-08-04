@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 12:25:49 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 16:24:09 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 11:25:09 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	ft_builtinsearch(void)
 {
+	g_shell->lstfreeflag = 1;
 	if (!ft_strcmp(g_shell->commandlist[0], "env"))
 		return (ft_env(g_shell->env));
 	if (!ft_strcmp(g_shell->commandlist[0], "cd"))

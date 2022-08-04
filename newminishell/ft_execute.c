@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:08:36 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 10:55:41 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 11:20:49 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void	ft_searchfor(void)
 	int		i;
 	int		flag;
 
+	g_shell->lstfreeflag = 0;
 	i = -1;
 	flag = 0;
 	g_shell->lst = malloc(100);

@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 12:48:17 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 16:42:38 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 11:59:29 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	ft_echo(char **arg)
 		return (1);
 	while (arg[i])
 	{
-		printf("%d %s\n", i, arg[i]);
 		if (arg[i][0] == '\"' || arg[i][0] == '\'')
 			write(1, arg[i] + 1, ft_strlen(arg[i]) - 1);
 		else
