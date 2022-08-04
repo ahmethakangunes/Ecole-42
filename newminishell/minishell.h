@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 16:06:10 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 16:14:49 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ typedef struct s_shell
 	int			pipe_flag;
 	int			lstfreeflag;
 	t_token		*program;
-	
 }		t_shell;
 
 t_shell	*g_shell;
