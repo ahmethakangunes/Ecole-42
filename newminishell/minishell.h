@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
+/*   By: scoskun <scoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 16:33:45 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 10:38:48 by scoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,19 @@
 # include <fcntl.h>
 # include <signal.h>
 
+typedef struct s_token
+{
+	char	**path; //free
+	char	**arglist; //free
+	int		fd[2];
+	
+}	t_token;
+
+
+
+
+
+
 typedef struct s_shell
 {
 	char		**commandlist; //free
@@ -33,7 +46,6 @@ typedef struct s_shell
 	char		**path;		//free
 	char		**lst;		//free
 	char		*command;
-	char		*promt;		//free
 	int			pipe_flag;
 }		t_shell;
 
@@ -48,4 +60,6 @@ char	**splt2norm(char *command, int i, int k, int j);
 void	runcommand(void);
 int		ft_commandsearch(void);
 void	ft_path(void);
+void	ft_free(void);
+
 #endif

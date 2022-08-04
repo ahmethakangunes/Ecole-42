@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_execute.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
+/*   By: scoskun <scoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:08:36 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 16:33:04 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 10:46:54 by scoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ void	ft_path(void)
 	}
 	g_shell->path = ft_split(g_shell->env[i], ':');
 	g_shell->path[0] = ft_strdup((ft_strchr(g_shell->path[0], '=') + 1));
+	free(g_shell->path[0]);
+	i = -1;
+	while (g_shell->path[++i])
+	{
+		g_shell->path[i] = ft_strjoin(g_shell->path[i], "/");
+		g_shell->path[i] = ft_strjoin(g_shell->path[i], \
+		g_shell->commandlist[0]);
+	}
 }
 
 int	ft_execve(char *arr, char **lst, char **env)
@@ -80,13 +88,6 @@ void	ft_searchfor(void)
 	i = -1;
 	flag = 0;
 	g_shell->lst = malloc(100);
-	while (g_shell->path[++i])
-	{
-		g_shell->path[i] = ft_strjoin(g_shell->path[i], "/");
-		g_shell->path[i] = ft_strjoin(g_shell->path[i], \
-		g_shell->commandlist[0]);
-	}
-	i = -1;
 	while (g_shell->commandlist && g_shell->commandlist[++i])
 		g_shell->lst[i] = ft_strdup(g_shell->commandlist[i]);
 	g_shell->lst[i] = NULL;
