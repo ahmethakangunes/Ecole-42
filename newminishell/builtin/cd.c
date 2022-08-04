@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 12:53:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/03 16:21:59 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 13:25:24 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,25 @@ int	ft_cd(char *command, char **env)
 
 void	envupdate(char *buff, char *old, char **env)
 {
-	int	i;
+	int		i;
+	char	*a;
 
 	i = 0;
 	while (env[i])
 	{
 		if (!ft_strncmp(env[i], "PWD", 3))
 		{
+			a = old;
 			env[i] = ft_strdup("PWD=");
 			env[i] = ft_strjoin(env[i], old);
+			free(a);
 		}
 		if (!ft_strncmp(env[i], "OLDPWD", 5))
 		{
+			a = buff;
 			env[i] = ft_strdup("OLDPWD=");
 			env[i] = ft_strjoin(env[i], buff);
+			free(a);
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:06:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 11:11:12 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 12:32:31 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*merge(char **command)
 
 	i = 0;
 	k = 0;
-	arr = malloc(1000);
+	arr = malloc(2048);
 	while (command[i])
 	{
 		j = 0;

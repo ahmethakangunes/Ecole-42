@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:41:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 11:16:16 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 12:55:22 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_shell
 	char		**lst;		//free
 	char		*command;
 	int			pipe_flag;
+	int			pipe_flag2;
 	int			lstfreeflag;
 }		t_shell;
 
@@ -62,5 +63,6 @@ void	runcommand(void);
 int		ft_commandsearch(void);
 void	ft_path(void);
 void	ft_free(void);
+char	*merge(char **command);
 
 #endif

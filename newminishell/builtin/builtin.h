@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 13:14:13 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 11:26:10 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 13:03:44 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BUILTIN_H
 
 # include "../minishell.h"
+# include "unistd.h"
 
 int		ft_cd(char *command, char **env);
 void	envupdate(char *buff, char *old, char **env);

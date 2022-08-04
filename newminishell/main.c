@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:33:50 by agunes            #+#    #+#             */
-/*   Updated: 2022/08/04 11:09:42 by agunes           ###   ########.fr       */
+/*   Updated: 2022/08/04 13:46:16 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 int	main(int argc, char **argv, char **env)
 {
+	char	*prompt;
+
 	argc = 0;
 	argv = 0;
-	g_shell = malloc(sizeof(g_shell));
+	g_shell = malloc(sizeof(t_shell));
 	g_shell->env = env;
 	while (1)
 	{
-		g_shell->command = readline("minishell % ");
+		prompt = ft_prompt();
+		g_shell->command = readline(prompt);
+		free(prompt);
 		if (g_shell->command[0] != 0)
 		{
 			g_shell->commandlist = ft_parser(g_shell->command);
