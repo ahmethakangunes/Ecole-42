@@ -1,7 +1,7 @@
 NAME = phonebook
 CC = g++
-CFLASG = -Wall -Wextra -Werror
-SRCS = main.cpp utils.cpp
+CFLASG = -Wall -Wextra -Werror -std=c++98 -g
+SRCS = main.cpp PhoneBook.cpp
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
