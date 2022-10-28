@@ -25,17 +25,10 @@ void replace(string filename, string s1, string s2){
     output << newfile;
 }
 
-int main(){
-
-	string filename;
-	string s1;
-	string s2;
-
-    cout << "Filename: ";
-	getline(cin, filename);
-    cout << "String 1: ";
-	getline(cin, s1);
-    cout << "String 2: ";
-	getline(cin, s2);
-	replace(filename, s1, s2);
+int main(int argc, char **argv){
+	if (argc == 4)
+		replace(argv[1], argv[2], argv[3]);
+	else
+		cout << "Wrong input.";
+	return (0);
 }

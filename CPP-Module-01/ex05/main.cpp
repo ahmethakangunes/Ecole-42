@@ -1,7 +1,10 @@
 #include "Harl.h"
 
 int main(){
-    Harl Harl;
+	Harl Harl;
 
-    Harl.complain("error");
+	Harl.complain("debug");
+	Harl.complain("info");
+	Harl.complain("warning");
+	Harl.complain("error");
 }
