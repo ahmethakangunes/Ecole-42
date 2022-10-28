@@ -3,14 +3,15 @@
 void replace(string filename, string s1, string s2){
 
 	ifstream input(filename, std::ios::in);
-	ofstream output(filename + ".replace");
-    if (input.fail() || output.fail()) {
-        if (input.fail())
-            cout << "File not found.";
-        else
-            cout << "Failed to create new file.";
+    if (input.fail()) {
+		cout << "File not found.";
         exit (0);
     }
+	ofstream output(filename + ".replace");
+	if (output.fail()){
+		cout << "Failed to create new file.";
+		exit (0);
+	}
     string newfile;
 	char c;
 	while(input.get(c)) {
