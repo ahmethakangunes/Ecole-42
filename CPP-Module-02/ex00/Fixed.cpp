@@ -5,11 +5,6 @@ Fixed::Fixed() {
     cout << "Default constructor called" << endl;
 }
 
-
-void Fixed::operator++() {
-    _fixedpoint++;
-}
-
 Fixed::Fixed(const Fixed &obj) {
     cout << "Copy constructor called" << endl;
     (*this) = obj;
@@ -17,7 +12,7 @@ Fixed::Fixed(const Fixed &obj) {
 
 Fixed &Fixed::operator=(const Fixed &obj){
     cout << "Copy assignment operator called" << endl;
-    _fixedpoint = getRawBits();
+    _fixedpoint = obj.getRawBits();
     return (*this);
 }
 
@@ -32,4 +27,4 @@ void Fixed::setRawBits(const int raw) {
 
 Fixed::~Fixed() {
     cout << "Destructor called" << endl;
-};
+}

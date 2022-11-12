@@ -1,25 +1,18 @@
 #include "Fixed.h"
 
-using std::cout;
-using std::endl;
-
 Fixed::Fixed() {
     cout << "Default constructor called" << endl;
-};
+    _fixednumber = 0;
+}
 
-Fixed::Fixed(const int _fixedpoint) {
+Fixed::Fixed(const int number) {
     cout << "Int constructor called" << endl;
-    this->_fixedpoint = (_fixedpoint << _fractionalpoint);
-};
+    _fixednumber = number << _fractionalpoint;
+}
 
-Fixed::Fixed(float _floatpoint) {
+Fixed::Fixed(const float number) {
     cout << "Float constructor called" << endl;
-    //gelen float değerini fixedpointe çevir.
-    _fixedpoint = _floatpoint * (1 << _fractionalpoint);
-};
-
-int Fixed::toInt(void) const {
-    return (_fixedpoint >> _fractionalpoint);
+    _fixednumber = (roundf((number * (1 << _fractionalpoint))));
 }
 
 Fixed::Fixed(const Fixed &obj) {
@@ -29,8 +22,22 @@ Fixed::Fixed(const Fixed &obj) {
 
 Fixed &Fixed::operator=(const Fixed &obj) {
     cout << "Copy assignment operator called" << endl;
+    _fixednumber = obj._fixednumber;
     return (*this);
 }
 
-Fixed::~Fixed() {};
+float Fixed::toFloat() const {
+    return (roundf(_fixednumber) / (1 << _fractionalpoint));
+}
 
+int Fixed::toInt() const {
+    return (_fixednumber >> _fractionalpoint);
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed &obj)
+{
+    os << obj.toFloat();
+    return os;
+}
+
+Fixed::~Fixed() {};
