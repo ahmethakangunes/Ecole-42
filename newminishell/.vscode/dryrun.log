@@ -1,9 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/agunes/Desktop/Ecole-42/newminishell'
-echo Complining: [token.c]
-gcc -c token.c -o token.o -Wall -Werror -Wextra
- 
-gcc -Wall -Wextra -Werror -lreadline -g main.o utils.o ft_parser.o ft_parser2.o ft_execute.o ft_free.o token.o -o minishell ./libft/libft.a ./builtin/builtin.a
-echo "Minishell ready."
-make: Leaving directory `/Users/agunes/Desktop/Ecole-42/newminishell'
- 
